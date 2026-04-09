@@ -38,7 +38,7 @@ import {
 import { Fragment } from 'react';
 import { media } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
-import styles from './creativecampaign.css';
+import styles from './creativecampaign.module.css';
 
 const title = 'HealthLink BC';
 const description =
