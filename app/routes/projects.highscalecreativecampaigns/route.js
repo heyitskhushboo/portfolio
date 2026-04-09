@@ -1,0 +1,1 @@
+export { CreativeCampaign as default, meta } from './creativecampaign';

@@ -1,0 +1,1 @@
+export { HealthLink as default, meta } from './healthlink';

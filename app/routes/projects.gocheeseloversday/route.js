@@ -1,0 +1,1 @@
+export { gocheeseloversday as default, meta } from './gocheeseloversday';
