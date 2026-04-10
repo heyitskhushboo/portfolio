@@ -47,10 +47,16 @@ export const links = () => [
 ];
 
 export const loader = async ({ request }) => {
-  const { url } = request;
-  const { pathname } = new URL(url);
- const pathnameSliced = pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
-  const canonicalUrl = `${config.url}${pathnameSliced}`;
+  const url = new URL(request.url);
+  // This gets the actual domain being used (local or production)
+  const baseUrl = `${url.protocol}//${url.host}`; 
+  
+  const pathname = url.pathname;
+  const pathnameSliced = pathname.endsWith('/') && pathname !== '/' 
+    ? pathname.slice(0, -1) 
+    : pathname;
+    
+  const canonicalUrl = `${baseUrl}${pathnameSliced}`;
 
   const { getSession, commitSession } = createCookieSessionStorage({
     cookie: {
