@@ -1,7 +1,4 @@
-import {
-  vitePlugin as remix,
-  cloudflareDevProxyVitePlugin as remixCloudflareDevProxy,
-} from '@remix-run/dev';
+import { vitePlugin as remix } from '@remix-run/dev';
 import { defineConfig } from 'vite';
 import jsconfigPaths from 'vite-jsconfig-paths';
 import mdx from '@mdx-js/rollup';
@@ -13,7 +10,7 @@ import rehypePrism from '@mapbox/rehype-prism';
 
 export default defineConfig({
   assetsInclude: ['**/*.glb', '**/*.hdr', '**/*.glsl'],
-  base: process.env.VITE_BASE_PATH || "/portfolio",
+  base: '/',                        // ← was "/portfolio", change to "/"
   build: {
     assetsInlineLimit: 1024,
   },
@@ -26,7 +23,7 @@ export default defineConfig({
       remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
       providerImportSource: '@mdx-js/react',
     }),
-    remixCloudflareDevProxy(),
+    // ← removed remixCloudflareDevProxy()
     remix({
       routes(defineRoutes) {
         return defineRoutes(route => {
