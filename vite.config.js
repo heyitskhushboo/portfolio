@@ -10,7 +10,7 @@ import rehypePrism from '@mapbox/rehype-prism';
 
 export default defineConfig({
   assetsInclude: ['**/*.glb', '**/*.hdr', '**/*.glsl'],
-  base: '/',                        // ← was "/portfolio", change to "/"
+  base: '/',                      
   build: {
     assetsInlineLimit: 1024,
   },
@@ -23,7 +23,7 @@ export default defineConfig({
       remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
       providerImportSource: '@mdx-js/react',
     }),
-    // ← removed remixCloudflareDevProxy()
+    
     remix({
       routes(defineRoutes) {
         return defineRoutes(route => {
