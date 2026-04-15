@@ -40,6 +40,7 @@ import { media } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
 import styles from './gocheese.module.css';
 
+
 const title = 'GO Cheese AI-based Interactive Website';
 const description =
   'The brief was to make people spend more time on a cheese brand website. So we gave them something to actually do.';

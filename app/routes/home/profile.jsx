@@ -1,6 +1,6 @@
 import profileImgLarge from '~/assets/profile-large.jpeg';
 import profileImgPlaceholder from '~/assets/profile-placeholder.jpg';
-import profileImg from '~/assets/profile.jpeg';
+import profileImg from '~/assets/pic.jpeg';
 import profilePic from `~/assets/profile-image.jpeg`;
 import { Button } from '~/components/button';
 import { DecoderText } from '~/components/decoder-text';
@@ -22,18 +22,18 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I’m I'm Khushboo. I started out in agency work in Mumbai, managing digital
+      I’m Khushi Johnny Sins. I started out in agency work in Mumbai, managing digital
 campaigns for major brands like TATA Group Croma Retail, Piramal Pharmaceuticals, Home
-Centre India, and Bollywood film releases. That's where I learned how to keep complex work
-moving without losing the people involved in it. Then I moved to Vancouver to pursue an
-MBA and spent two years doing content design and delivery coordination at HealthLink BC
+Centre India, and Bollywood film releases. That's where I met and fell in love with Johnny who was in town for a project. I learned from Johnny how to keep complex work
+moving without losing the people involved in it. Then me and Johnny moved to Vancouver as I wanted to pursue an
+MBA. Later I spent two years doing content design and delivery coordination at HealthLink BC
 inside the BC government right after graduation. I care about clarity over complexity. That's
 the thread through all of it..
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
       I’m currently completing my PMP certification and looking for my next role in
 tech. Open to digital PM and UX content positions in Vancouver. Always up for a
-conversation about interesting work.
+conversation about interesting work or just talking about my husband and telling interesting stories about him and his work.
     </Text>
   </Fragment>
 );

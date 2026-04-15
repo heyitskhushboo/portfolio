@@ -1,18 +1,9 @@
-import gamestackTexture2Large from '~/assets/gamestack-list-large.jpg';
-import gamestackTexture2Placeholder from '~/assets/gamestack-list-placeholder.jpg';
-import gamestackTexture2 from '~/assets/gamestack-list.jpg';
-import gamestackTextureLarge from '~/assets/gamestack-login-large.jpg';
-import gamestackTexturePlaceholder from '~/assets/gamestack-login-placeholder.jpg';
-import gamestackTexture from '~/assets/gamestack-login.jpg';
-import goCheeseLoversDay from '~/assets/gocheeseLoversDay.png';
+
 import goCheeseCampaign from '~/assets/goCheesecampaign.png';
-import sliceTextureLarge from '~/assets/slice-app-large.jpg';
+
 import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
 import lootCase from '~/assets/Lootcase.jpg';
-import sliceTexture from '~/assets/slice-app.jpg';
-import healthLinkBCLarge from '~/assets/Healthlinkbc.png';
 import healthLinkBCPlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
-import healthLinkBC from '~/assets/Healthlinkbc.png';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
@@ -21,6 +12,9 @@ import { ProjectSummary } from './project-summary';
 import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
 import styles from './home.module.css';
+import goCheeseLaptopImage from `~/assets/gpCheeseAILaptop.png`;
+import healthLinkBCLaptopImage from `~/assets/hlbsLaptop.png`;
+import goCheeseCampaignLaptopImage from `~/assets/goCheeseCampaignLaptopImage.png`;
 
 // Prefetch draco decoader wasm
 export const links = () => {
@@ -116,7 +110,7 @@ export const Home = () => {
           alt: 'Smart Sparrow lesson builder',
           textures: [
             {
-              srcSet: `${healthLinkBC} 1280w, ${healthLinkBCLarge} 2560w`,
+              srcSet: `${healthLinkBCLaptopImage} 1280w, ${healthLinkBCLaptopImage} 2560w`,
               placeholder: healthLinkBCPlaceholder,
             },
           ],
@@ -137,7 +131,7 @@ export const Home = () => {
           alt: 'App login screen',
           textures: [
             {
-              srcSet: `${goCheeseLoversDay} 1280w, ${goCheeseLoversDay} 2560w`,
+              srcSet: `${goCheeseLaptopImage} 1280w, ${goCheeseLaptopImage} 2560w`,
               placeholder: healthLinkBCPlaceholder,
             },
           ],
@@ -157,7 +151,7 @@ export const Home = () => {
           alt: 'Annotating a biomedical image in the Slice app',
           textures: [
             {
-              srcSet: `${goCheeseCampaign} 1280w, ${goCheeseCampaign} 2560w`,
+              srcSet: `${goCheeseCampaignLaptopImage} 1280w, ${goCheeseCampaignLaptopImage} 2560w`,
               placeholder: sliceTexturePlaceholder,
             },
           ],
