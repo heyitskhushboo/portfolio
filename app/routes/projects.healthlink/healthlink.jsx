@@ -23,6 +23,14 @@ import sliceSlidesPlaceholder from '~/assets/slice-slides-placeholder.jpg';
 import sliceSlides from '~/assets/slice-slides.jpg';
 import { Footer } from '~/components/footer';
 import { Image } from '~/components/image';
+import image1 from `~/assets/bchealthlink1.png`;
+import image2 from `~/assets/bchealthlink2.png`;
+import image3 from `~/assets/bchealthlink3.png`;
+import image4 from `~/assets/bchealthlink4.png`;
+import mobileimage1 from `~/assets/bchealthlinkmobile1.png`;
+import mobileimage2 from `~/assets/bchealthlinkmobile2.png`;
+
+
 import {
   ProjectBackground,
   ProjectContainer,
@@ -70,7 +78,7 @@ export const HealthLink = () => {
         <ProjectSection padding="top">
           <ProjectSectionContent>
             <ProjectImage
-              srcSet={`${sliceApp} 800w, ${sliceAppLarge} 1920w`}
+              srcSet={`${image1} 800w, ${image1} 1920w`}
               width={800}
               height={500}
               placeholder={sliceAppPlaceholder}
@@ -93,7 +101,7 @@ export const HealthLink = () => {
             <div className={styles.sidebarImages}>
               <Image
                 className={styles.sidebarImage}
-                srcSet={`${sliceSidebarLayers} 350w, ${sliceSidebarLayersLarge} 700w`}
+                srcSet={`${mobileimage1} 350w, ${mobileimage1} 700w`}
                 width={350}
                 height={750}
                 placeholder={sliceSidebarLayersPlaceholder}
@@ -102,7 +110,7 @@ export const HealthLink = () => {
               />
               <Image
                 className={styles.sidebarImage}
-                srcSet={`${sliceSidebarAnnotations} 350w, ${sliceSidebarAnnotationsLarge} 700w`}
+                srcSet={`${mobileimage2} 350w, ${mobileimage2} 700w`}
                 width={350}
                 height={750}
                 placeholder={sliceSidebarAnnotationsPlaceholder}
@@ -135,7 +143,7 @@ export const HealthLink = () => {
             </ProjectSectionText>
             </ProjectTextRow>
             <Image
-              srcSet={`${sliceSlides} 800w, ${sliceSlidesLarge} 1920w`}
+              srcSet={`${image2} 800w, ${image2} 1920w`}
               width={800}
               height={500}
               placeholder={sliceSlidesPlaceholder}
@@ -146,29 +154,6 @@ export const HealthLink = () => {
         </ProjectSection>
         <ProjectSection padding="top">
           <ProjectSectionContent className={styles.grid}>
-            <div className={styles.gridImage}>
-              <div className={styles.gridBackground}>
-                <Image
-                  srcSet={`${sliceBackgroundBar} 440w, ${sliceBackgroundBarLarge} 880w`}
-                  width={440}
-                  height={790}
-                  placeholder={sliceBackgroundBarPlaceholder}
-                  alt=""
-                  role="presentation"
-                  sizes={`(max-width: ${media.mobile}px) 312px, (max-width: ${media.tablet}px) 408px, 514px`}
-                />
-              </div>
-              <div className={styles.gridForeground}>
-                <Image
-                  srcSet={`${sliceAnnotation} 440w, ${sliceAnnotationLarge} 880w`}
-                  width={440}
-                  height={340}
-                  placeholder={sliceAnnotationPlaceholder}
-                  alt="An annotation preview popover with statistics for shape perimeter and area."
-                  sizes={`(max-width: ${media.mobile}px) 584px, (max-width: ${media.tablet}px) 747px, 556px`}
-                />
-              </div>
-            </div>
             <div className={styles.gridText}>
               <ProjectSectionHeading>Constraints</ProjectSectionHeading>
               <ProjectSectionText>
@@ -186,6 +171,13 @@ export const HealthLink = () => {
         <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow>
+              <Image
+              src={image3}
+              width={940}
+              height={500}
+              placeholder={sliceIrlPlaceholder}
+              alt="Students at the University of New South Wales using the new collaborative annotation features"
+            />
               <ProjectSectionHeading> What I did</ProjectSectionHeading>
               <ProjectSectionText>
                 Tracked content migration dependencies in Drupal so pages moved through the right stages without getting stuck or going live before approval.
@@ -198,13 +190,6 @@ export const HealthLink = () => {
                 Managed production schedules across multiple concurrent content workstreams.
               </ProjectSectionText>
             </ProjectTextRow>
-            <Image
-              src={sliceIrl}
-              width={940}
-              height={500}
-              placeholder={sliceIrlPlaceholder}
-              alt="Students at the University of New South Wales using the new collaborative annotation features"
-            />
           </ProjectSectionContent>
         </ProjectSection>
 
@@ -226,7 +211,7 @@ export const HealthLink = () => {
               </ProjectSectionText>
             </ProjectTextRow>
             <Image
-              src={sliceIrl}
+              src={image4}
               width={940}
               height={500}
               placeholder={sliceIrlPlaceholder}
