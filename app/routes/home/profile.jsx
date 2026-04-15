@@ -1,7 +1,7 @@
 import profileImgLarge from '~/assets/profile-large.jpeg';
 import profileImgPlaceholder from '~/assets/profile-placeholder.jpg';
 import profileImg from '~/assets/pic.jpeg';
-import profilePic from `~/assets/profile-image.jpeg`;
+
 import { Button } from '~/components/button';
 import { DecoderText } from '~/components/decoder-text';
 import { Divider } from '~/components/divider';
