@@ -10,7 +10,6 @@ export const Footer = ({ className }) => (
       <span className={styles.date}>
         {`© ${new Date().getFullYear()} ${config.name}.`}
       </span>
-        Inspired by Hamish Williams
       
     </Text>
   </footer>
