@@ -23,6 +23,12 @@ import sliceSlidesPlaceholder from '~/assets/slice-slides-placeholder.jpg';
 import sliceSlides from '~/assets/slice-slides.jpg';
 import { Footer } from '~/components/footer';
 import { Image } from '~/components/image';
+import image1 from `~/assets/gocheesecampaign1.png`;
+import image2 from `~/assets/gocheesecampaign2.png`;
+import image3 from `~/assets/gocheesecampaign3.png`;
+import image4 from `~/assets/gocheesecampaign4.png`;
+import mobileimage1 from `~/assets/gocheesecampaign1mobile1.png`;
+import mobileimage2 from `~/assets/gocheesecampaignmobile2.png`;
 
 import {
   ProjectBackground,
@@ -41,10 +47,10 @@ import { media } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
 import styles from './gocheeseloversday.module.css';
 
-const title = 'HealthLink BC';
+const title = 'GO Cheese Campaign';
 const description =
-  '16 million people used this platform. Most couldn’t find what they needed.';
-const roles = ['Content quality assurance', 'Plain language editing', 'WCAG 2.1 compliance', 'Drupal CMS migration coordination', 'Stakeholder facilitation', 'Usability testing support'];
+  'One day. Five platforms. It trended on Twitter for four hours.';
+const roles = ['End-to-end campaign PM', 'Timeline and dependency planning', 'Client stakeholder management (4 stakeholders)', 'Influencer programme coordination', 'Microsite delivery oversight', 'Live campaign monitoring', 'Post-campaign reporting'];
 
 export const meta = () => {
   return baseMeta({ title, description, prefix: 'Projects' });
@@ -52,11 +58,11 @@ export const meta = () => {
 
 export const gocheeseloversday = () => {
   return (
-    <Fragment>
+        <Fragment>
       <ProjectContainer className={styles.slice}>
         <ProjectBackground
           src={sliceBackground}
-          srcSet={`${image1} 1280w, ${image1} 2560w`}
+          srcSet={`${sliceBackground} 1280w, ${sliceBackgroundLarge} 2560w`}
           width={1280}
           height={800}
           placeholder={sliceBackgroundPlaceholder}
@@ -65,16 +71,16 @@ export const gocheeseloversday = () => {
         <ProjectHeader
           title={title}
           description={description}
-          url="https://www.gocheese.co.in/cheeseloversday/"
+          url="https://www.healthlinkbc.ca/"
           roles={roles}
         />
         <ProjectSection padding="top">
           <ProjectSectionContent>
             <ProjectImage
-              srcSet={`${sliceApp} 800w, ${sliceAppLarge} 1920w`}
+              srcSet={`${image1} 800w, ${image1} 1920w`}
               width={800}
               height={500}
-              placeholder={sliceAppPlaceholder}
+              placeholder={image1}
               alt="The Slice web application showing a selected user annotation."
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 90vw, 80vw`}
             />
@@ -83,18 +89,16 @@ export const gocheeseloversday = () => {
         <ProjectSection>
           <ProjectSectionColumns centered className={styles.columns}>
             <div className={styles.imagesText}>
-              <ProjectSectionHeading>Bringing it together</ProjectSectionHeading>
+              <ProjectSectionHeading>Intro</ProjectSectionHeading>
               <ProjectSectionText>
-                I worked as Coordinator, Content Design on the HealthLink BC website redesign, part of
-                BC's broader digital health transformation. The role covered content quality assurance,
-                migration coordination, accessibility compliance, and stakeholder communication across
-                clinical, policy, UX, and technical teams.
+                I was Project Manager on the #GoCheeseLoversDay2019 campaign for GO Cheese (Parag Milk Foods), run through Dentsu Creative (WATConsult) in Mumbai. The campaign ran across Facebook, Instagram, Twitter, YouTube, and a campaign microsite, with five separate contest posts going live at two-hour intervals through a single day.
+
               </ProjectSectionText>
             </div>
             <div className={styles.sidebarImages}>
               <Image
                 className={styles.sidebarImage}
-                srcSet={`${sliceSidebarLayers} 350w, ${sliceSidebarLayersLarge} 700w`}
+                srcSet={`${mobileimage1} 350w, ${mobileimage1} 700w`}
                 width={350}
                 height={750}
                 placeholder={sliceSidebarLayersPlaceholder}
@@ -103,7 +107,7 @@ export const gocheeseloversday = () => {
               />
               <Image
                 className={styles.sidebarImage}
-                srcSet={`${sliceSidebarAnnotations} 350w, ${sliceSidebarAnnotationsLarge} 700w`}
+                srcSet={`${mobileimage2} 350w, ${mobileimage2} 700w`}
                 width={350}
                 height={750}
                 placeholder={sliceSidebarAnnotationsPlaceholder}
@@ -118,25 +122,27 @@ export const gocheeseloversday = () => {
             <ProjectTextRow>
               <ProjectSectionHeading> The problem</ProjectSectionHeading>
               <ProjectSectionText>
-                The information was accurate. The structure wasn't built for the people reading it.
+                Go Cheese Lovers Day is January 20th. Before this campaign, very few people outside the brand knew that.
+
               </ProjectSectionText>
               <ProjectSectionText>
-                HealthLink BC's navigation reflected how the Ministry organised itself internally, not how a
-                person thinks about their health at 11pm. Pages mixed clinical detail and plain language with
-                no distinction. The Find Care section was buried. ImmunizeBC lived on a separate site.
-                Public Health Alerts were hard to surface.
+                The brief was to own the day digitally. Drive brand awareness. Get people to actually participate, not just scroll past.
+
               </ProjectSectionText>
               <ProjectSectionText>
-                On top of that: clinical approval required on every content change, four organisations with a
-                say in each decision, thousands of pages to migrate, and a live site that couldn't go down
-                while the work happened.
+                The challenge wasn't the creative concept. The creative team handled that. The challenge was execution at pace, across five platforms, with no margin for timing errors. Each contest had a two-hour window. If one slipped, it knocked the next one off schedule and broke the momentum the whole campaign depended on.
+
             </ProjectSectionText>
             <ProjectSectionText>
-                The same platform needed to serve a nurse checking a reference quickly and a parent searching for their child's symptoms. It wasn't doing either well.
-            </ProjectSectionText>
+                Four client stakeholders needed to sign off throughout. A microsite was launching the same day. A paid media budget was split across multiple platforms. An influencer programme with 100+ participants was running simultaneously.
+          </ProjectSectionText>
+
+          <ProjectSectionText>
+                Sequencing was everything.
+         </ProjectSectionText>
             </ProjectTextRow>
             <Image
-              srcSet={`${sliceSlides} 800w, ${sliceSlidesLarge} 1920w`}
+              srcSet={`${image2} 800w, ${image2} 1920w`}
               width={800}
               height={500}
               placeholder={sliceSlidesPlaceholder}
@@ -147,39 +153,29 @@ export const gocheeseloversday = () => {
         </ProjectSection>
         <ProjectSection padding="top">
           <ProjectSectionContent className={styles.grid}>
-            <div className={styles.gridImage}>
-              <div className={styles.gridBackground}>
-                <Image
-                  srcSet={`${sliceBackgroundBar} 440w, ${sliceBackgroundBarLarge} 880w`}
-                  width={440}
-                  height={790}
-                  placeholder={sliceBackgroundBarPlaceholder}
-                  alt=""
-                  role="presentation"
-                  sizes={`(max-width: ${media.mobile}px) 312px, (max-width: ${media.tablet}px) 408px, 514px`}
-                />
-              </div>
-              <div className={styles.gridForeground}>
-                <Image
-                  srcSet={`${sliceAnnotation} 440w, ${sliceAnnotationLarge} 880w`}
-                  width={440}
-                  height={340}
-                  placeholder={sliceAnnotationPlaceholder}
-                  alt="An annotation preview popover with statistics for shape perimeter and area."
-                  sizes={`(max-width: ${media.mobile}px) 584px, (max-width: ${media.tablet}px) 747px, 556px`}
-                />
-              </div>
-            </div>
             <div className={styles.gridText}>
               <ProjectSectionHeading>Constraints</ProjectSectionHeading>
               <ProjectSectionText>
-                These made it harder than it sounds.
-                Regulated environment. Every piece of content needed clinical sign-off before it could
-                publish. Plain language edits that felt obvious to a writer felt like risk to a clinician. Building
-                trust that accuracy wasn't being traded for readability took time and wasn't optional.
-                WCAG 2.1 AA compliance required across the full platform, not just new pages.
-                Live migration. The site served millions of active users throughout. There was no pause button.
-                Stakeholders across Ministry of Health, PHSA, and clinical teams. All with different priorities and different timelines.
+                Single-day execution window with no ability to pause or reschedule.
+
+              </ProjectSectionText>
+              <ProjectSectionText>
+                Four client stakeholders with different priorities and approval speeds.
+
+              </ProjectSectionText>
+              <ProjectSectionText>
+               Microsite development running in parallel with campaign asset production. Two separate teams. One deadline.
+
+
+              </ProjectSectionText>
+              <ProjectSectionText>
+                Influencer programme targeted 100 participants across India. All needed briefing, coordination, and content quality checks before launch.
+
+              </ProjectSectionText>
+              <ProjectSectionText>
+                Paid media planned across Facebook, Instagram, YouTube, and Twitter simultaneously. Any budget reallocation needed fast decisions.
+
+
               </ProjectSectionText>
             </div>
           </ProjectSectionContent>
@@ -187,20 +183,29 @@ export const gocheeseloversday = () => {
         <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow>
+             
               <ProjectSectionHeading> What I did</ProjectSectionHeading>
               <ProjectSectionText>
-                Tracked content migration dependencies in Drupal so pages moved through the right stages without getting stuck or going live before approval.
-                Quality-checked pages against plain language and WCAG standards. Not as a checklist. As
-                someone reading them the way a real user would.
-                Supported usability testing sessions with Ministry of Health staff. Helped turn what came
-                back into something the design team could actually use.
-                Coordinated across clinical, policy, UX, and technical stakeholders. Sometimes that meant
-                translating between what a clinician needed to say and what a user needed to understand.
-                Managed production schedules across multiple concurrent content workstreams.
+               Built the campaign timeline across all workstreams before production started. RACI matrix in place so every team knew their role without needing to ask.
+               Coordinated microsite delivery alongside campaign asset production. Kept both tracks moving without one blocking the other.
               </ProjectSectionText>
+               <ProjectSectionText>
+               Managed the approval cycle with four client stakeholders. Kept it tight without letting it become a bottleneck.
+            </ProjectSectionText>
+            <ProjectSectionText>
+               Ran the influencer programme coordination with Frapp. Ended up with 130 participants against a target of 100.
+          </ProjectSectionText>
+            <ProjectSectionText>
+              On launch day: monitored all five contest posts as they went live at two-hour intervals. Managed the Twitter influencer activity in real time to maintain trending momentum through the four-hour window.
+                </ProjectSectionText>
+
+            <ProjectSectionText>
+              Delivered the full post-campaign performance report with platform-level breakdowns.
+
+            </ProjectSectionText>
             </ProjectTextRow>
-            <Image
-              src={sliceIrl}
+             <Image
+              src={image3}
               width={940}
               height={500}
               placeholder={sliceIrlPlaceholder}
@@ -209,32 +214,95 @@ export const gocheeseloversday = () => {
           </ProjectSectionContent>
         </ProjectSection>
 
-                <ProjectSection>
+        <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow>
               <ProjectSectionHeading> Before vs after</ProjectSectionHeading>
               <ProjectSectionText>
-                Before Navigation followed Ministry org structure, not user mental models. Find Care and
-                Health Connect Registry hard to locate. ImmunizeBC content on a separate site entirely.
-                Public Health Alerts buried. Pages mixed clinical and public audiences without distinction.
+                Before : Go Cheese Lovers Day was a date on a calendar most people didn't know existed. Campaign engagement benchmarked against a planned target.
 
               </ProjectSectionText>
               <ProjectSectionText>
-               After Structure built around how people search for health information. Find Care and Health
-                Connect Registry visible and accessible. ImmunizeBC consolidated into the main portal.
-                Public Health Alerts surfaced on the homepage. Cleaner reading levels across the platform.
-                WCAG 2.1 AA achieved.
+               After : #GoCheeseLoversDay2019 trended on Twitter in India for four hours. Facebook engagement exceeded the planned target by 716,407 interactions. Instagram impressions exceeded planned target by 524,046. Influencer programme delivered 130 participants against a target of 100.
+
               </ProjectSectionText>
             </ProjectTextRow>
             <Image
-              src={sliceIrl}
+              src={image4}
               width={940}
               height={500}
-              placeholder={sliceIrlPlaceholder}
+              placeholder={image4}
               alt="Students at the University of New South Wales using the new collaborative annotation features"
             />
           </ProjectSectionContent>
         </ProjectSection>
+
+        <ProjectSection>
+          <ProjectSectionContent>
+            <ProjectTextRow>
+              <ProjectSectionHeading> Outcome</ProjectSectionHeading>
+              <ProjectSectionText>
+                Numbers from the actual campaign report.
+
+              </ProjectSectionText>
+              <ProjectSectionText>
+              Facebook: 19.3M reach. 23.7M impressions. 5.5M engagements. Beat the planned engagement target by 716,407.
+              </ProjectSectionText>
+              <ProjectSectionText>
+              YouTube: 10.28M video views across 6 posts. 7.58% view-through rate.
+                            </ProjectSectionText>
+              <ProjectSectionText>
+              Twitter: Trended for 4 hours. 2.8M influencer impressions. 655K unique accounts reached. Sentiment score: 99 out of 100.
+                            </ProjectSectionText>
+              <ProjectSectionText>
+              Instagram: Impressions exceeded planned target by 524,046.
+                            </ProjectSectionText>
+              <ProjectSectionText>
+              Influencer programme: 150+ participants recruited (target: 100). 150 content pieces created. 120+ post shares on Facebook.
+            </ProjectSectionText>
+            </ProjectTextRow>
+            
+          </ProjectSectionContent>
+        </ProjectSection>
+
+       <ProjectSection>
+          <ProjectSectionContent>
+            <ProjectTextRow>
+              <ProjectSectionHeading> Lesson</ProjectSectionHeading>
+              <ProjectSectionText>
+                Timing is a deliverable, not a background condition.
+
+              </ProjectSectionText>
+              <ProjectSectionText>
+             For a single-day campaign like this, a standard project plan isn't enough. You need a minute-by-minute execution schedule. Each contest post had a window. Miss it and the next one is already running.
+
+              </ProjectSectionText>
+
+              <ProjectSectionText>
+              This was also the project where I understood the difference between managing a project and managing something live. In a project you plan ahead. In a live campaign you're making decisions while results are already coming in and the next task is already starting.
+
+              </ProjectSectionText>
+            </ProjectTextRow>
+            
+          </ProjectSectionContent>
+        </ProjectSection>
+
+
+           <ProjectSection>
+          <ProjectSectionContent>
+            <ProjectTextRow>
+              <ProjectSectionHeading> Takeaway</ProjectSectionHeading>
+              <ProjectSectionText>
+                For high-volume single-day campaigns: build a minute-by-minute execution plan, not just a project schedule. Assign one person per platform on the day itself. Agree your escalation path before launch, not during it.
+
+              </ProjectSectionText>
+
+            </ProjectTextRow>
+            
+          </ProjectSectionContent>
+        </ProjectSection>
+
+
       </ProjectContainer>
       <Footer />
     </Fragment>

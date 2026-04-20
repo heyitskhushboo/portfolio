@@ -145,7 +145,7 @@ export const Home = () => {
         title="GO Cheese Lovers Day Campaign"
         description="One day. Five platforms. It trended on Twitter for four hours."
         buttonText="View project"
-        buttonLink="/projects/slice"
+        buttonLink="/projects/gocheeseloversday"
         model={{
           type: 'laptop',
           alt: 'Annotating a biomedical image in the Slice app',
@@ -165,7 +165,7 @@ export const Home = () => {
         title="High-Scale Creative Campaigns"
         description=" Five film releases. One pandemic. Release dates that never move."
         buttonText="View project"
-        buttonLink="/projects/slice"
+        buttonLink="/projects/creativecampaign"
         model={{
           type: 'laptop',
           alt: 'Annotating a biomedical image in the Slice app',
