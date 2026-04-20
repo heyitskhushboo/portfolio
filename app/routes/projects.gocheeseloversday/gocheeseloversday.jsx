@@ -23,6 +23,7 @@ import sliceSlidesPlaceholder from '~/assets/slice-slides-placeholder.jpg';
 import sliceSlides from '~/assets/slice-slides.jpg';
 import { Footer } from '~/components/footer';
 import { Image } from '~/components/image';
+
 import {
   ProjectBackground,
   ProjectContainer,
@@ -55,7 +56,7 @@ export const gocheeseloversday = () => {
       <ProjectContainer className={styles.slice}>
         <ProjectBackground
           src={sliceBackground}
-          srcSet={`${sliceBackground} 1280w, ${sliceBackgroundLarge} 2560w`}
+          srcSet={`${image1} 1280w, ${image1} 2560w`}
           width={1280}
           height={800}
           placeholder={sliceBackgroundPlaceholder}
@@ -64,7 +65,7 @@ export const gocheeseloversday = () => {
         <ProjectHeader
           title={title}
           description={description}
-          url="https://www.best.edu.au/s/q2yjjvl7?data=8%404!9%4020303!10%40-15087&version=1"
+          url="https://www.gocheese.co.in/cheeseloversday/"
           roles={roles}
         />
         <ProjectSection padding="top">

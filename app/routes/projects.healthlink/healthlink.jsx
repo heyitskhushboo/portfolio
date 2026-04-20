@@ -171,13 +171,7 @@ export const HealthLink = () => {
         <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow>
-              <Image
-              src={image3}
-              width={940}
-              height={500}
-              placeholder={sliceIrlPlaceholder}
-              alt="Students at the University of New South Wales using the new collaborative annotation features"
-            />
+             
               <ProjectSectionHeading> What I did</ProjectSectionHeading>
               <ProjectSectionText>
                 Tracked content migration dependencies in Drupal so pages moved through the right stages without getting stuck or going live before approval.
@@ -190,6 +184,13 @@ export const HealthLink = () => {
                 Managed production schedules across multiple concurrent content workstreams.
               </ProjectSectionText>
             </ProjectTextRow>
+             <Image
+              src={image3}
+              width={940}
+              height={500}
+              placeholder={sliceIrlPlaceholder}
+              alt="Students at the University of New South Wales using the new collaborative annotation features"
+            />
           </ProjectSectionContent>
         </ProjectSection>
 
