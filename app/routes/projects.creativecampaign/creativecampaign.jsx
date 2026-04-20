@@ -23,6 +23,12 @@ import sliceSlidesPlaceholder from '~/assets/slice-slides-placeholder.jpg';
 import sliceSlides from '~/assets/slice-slides.jpg';
 import { Footer } from '~/components/footer';
 import { Image } from '~/components/image';
+import image1 from '~/assets/creativecampaign1.jpg';
+import image2 from '~/assets/creativecampaign2.jpg';
+import image3 from '~/assets/creativecampaign3.jpeg';
+import image4 from '~/assets/creativecampaign6.gif';
+import image5 from '~/assets/creativecampaign5.jpg';
+import mobileimage from `~/assets/creativecampaignmobile.jpg`;
 import {
   ProjectBackground,
   ProjectContainer,
@@ -40,10 +46,10 @@ import { media } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
 import styles from './creativecampaign.module.css';
 
-const title = 'HealthLink BC';
+const title = 'High-Scale Creative Campaigns';
 const description =
-  '16 million people used this platform. Most couldn’t find what they needed.';
-const roles = ['Content quality assurance', 'Plain language editing', 'WCAG 2.1 compliance', 'Drupal CMS migration coordination', 'Stakeholder facilitation', 'Usability testing support'];
+  'Five film releases. One pandemic. Release dates that never move.';
+const roles = ['End-to-end campaign PM', 'Client stakeholder management', 'Cross-functional team coordination', 'Risk and issue management', 'Social listening and brand safety monitoring', 'OTT-first delivery coordination', 'Post-campaign reporting'];
 
 export const meta = () => {
   return baseMeta({ title, description, prefix: 'Projects' });
@@ -70,10 +76,10 @@ export const CreativeCampaign = () => {
         <ProjectSection padding="top">
           <ProjectSectionContent>
             <ProjectImage
-              srcSet={`${sliceApp} 800w, ${sliceAppLarge} 1920w`}
+              srcSet={`${image1} 800w, ${image1} 1920w`}
               width={800}
               height={500}
-              placeholder={sliceAppPlaceholder}
+              placeholder={image1}
               alt="The Slice web application showing a selected user annotation."
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 90vw, 80vw`}
             />
@@ -84,16 +90,14 @@ export const CreativeCampaign = () => {
             <div className={styles.imagesText}>
               <ProjectSectionHeading>Project Intro</ProjectSectionHeading>
               <ProjectSectionText>
-                I was Project Manager on the GO Cheese interactive website, built for Parag Milk Foods
-through Dentsu Creative (WATConsult) in Mumbai. The project centred on an AI-enabled
-recipe generator that let users build customised recipes using GO Cheese products directly
-on the brand website.
+              I was Project Manager for digital campaign delivery at Dentsu Creative (WATConsult) in Mumbai across a series of major film and brand campaigns. This case study covers five film releases between 2019 and 2020 including Chhichhore, Panga, Lootcase, Sadak 2, and Laxmii, plus wider brand campaign work for GO Cheese, Croma Retail, Tata CLiQ, Piramal Pharma, Godrej Appliances, and Home Centre India.
+               I managed delivery on these campaigns. Timelines, stakeholder coordination, cross-functional execution, risk management. Creative strategy and direction belonged to the agency and client teams. What follows is about the delivery layer.
               </ProjectSectionText>
             </div>
             <div className={styles.sidebarImages}>
               <Image
                 className={styles.sidebarImage}
-                srcSet={`${sliceSidebarLayers} 350w, ${sliceSidebarLayersLarge} 700w`}
+                srcSet={`${mobileimage} 350w, ${mobileimage} 700w`}
                 width={350}
                 height={750}
                 placeholder={sliceSidebarLayersPlaceholder}
@@ -102,7 +106,7 @@ on the brand website.
               />
               <Image
                 className={styles.sidebarImage}
-                srcSet={`${sliceSidebarAnnotations} 350w, ${sliceSidebarAnnotationsLarge} 700w`}
+                srcSet={`${mobileimage} 350w, ${mobileimage} 700w`}
                 width={350}
                 height={750}
                 placeholder={sliceSidebarAnnotationsPlaceholder}
@@ -117,25 +121,22 @@ on the brand website.
             <ProjectTextRow>
               <ProjectSectionHeading> The problem</ProjectSectionHeading>
               <ProjectSectionText>
-                The brand had a website. People visited, looked at products, and left. There was nothing to do there.
+                A film has a release date. That date does not move.
               </ProjectSectionText>
               <ProjectSectionText>
-                The brief was to change that. Give users a reason to stay, something to interact with, something that connected the product to actual food they might make. Passive browsing
-                wasn't working. The brand wanted engagement, and the only way to get it was to build
-                something worth engaging with.
+                If an asset is late, a client approval gets stuck, or an influencer drops out, the campaign still has to go live across every platform on time. That constraint doesn't change regardless of what else is happening.
 
               </ProjectSectionText>
               <ProjectSectionText>
-                The product range was the starting point. GO Cheese makes processed squares, slices,
-                spreads, pizza cheese. All of it usable in real recipes. The insight was simple: let people
-                build something with it.
+                Between 2019 and 2020, what else was happening changed significantly. Chhichhore and Panga were standard theatrical campaigns with physical events and coordinated nationwide launches. Then COVID arrived, cinemas closed, and three films became direct-to-OTT releases on Disney+ Hotstar with weeks of notice. The entire delivery model had to change without the release dates shifting.
+
             </ProjectSectionText>
             </ProjectTextRow>
             <Image
-              srcSet={`${sliceSlides} 800w, ${sliceSlidesLarge} 1920w`}
+              srcSet={`${image2} 800w, ${image2} 1920w`}
               width={800}
               height={500}
-              placeholder={sliceSlidesPlaceholder}
+              placeholder={image2}
               alt="The new My Slides tab in slice, showing annotated and favorited slides."
               sizes={`(max-width: ${media.mobile}px) 500px, (max-width: ${media.tablet}px) 800px, 1000px`}
             />
@@ -143,83 +144,75 @@ on the brand website.
         </ProjectSection>
         <ProjectSection padding="top">
           <ProjectSectionContent className={styles.grid}>
-            <div className={styles.gridImage}>
-              <div className={styles.gridBackground}>
-                <Image
-                  srcSet={`${sliceBackgroundBar} 440w, ${sliceBackgroundBarLarge} 880w`}
-                  width={440}
-                  height={790}
-                  placeholder={sliceBackgroundBarPlaceholder}
-                  alt=""
-                  role="presentation"
-                  sizes={`(max-width: ${media.mobile}px) 312px, (max-width: ${media.tablet}px) 408px, 514px`}
-                />
-              </div>
-              <div className={styles.gridForeground}>
-                <Image
-                  srcSet={`${sliceAnnotation} 440w, ${sliceAnnotationLarge} 880w`}
-                  width={440}
-                  height={340}
-                  placeholder={sliceAnnotationPlaceholder}
-                  alt="An annotation preview popover with statistics for shape perimeter and area."
-                  sizes={`(max-width: ${media.mobile}px) 584px, (max-width: ${media.tablet}px) 747px, 556px`}
-                />
-              </div>
-            </div>
             <div className={styles.gridText}>
               <ProjectSectionHeading>Constraints</ProjectSectionHeading>
               <ProjectSectionText>
-                AI-powered functionality in 2018 on a consumer brand website was not a simple build. The
-                recipe generator needed to work intuitively for a general audience, not a tech-savvy one.
+                Release dates are fixed. Everything else is a variable.
+
 
               </ProjectSectionText>
               <ProjectSectionText>
-                Four client stakeholders with different priorities and approval speeds. Brand, marketing, product, and technical teams all had a say.
+                Physical promotion became impossible mid-2020. Every activation had to be rebuilt for digital from scratch, without additional budget or timeline.
+  
               </ProjectSectionText>
               <ProjectSectionText>
-                The website had to showcase the full GO Cheese product range, both existing and new, without feeling like a product catalogue. That tension ran through every UX decision.
+                OTT releases meant no opening weekend data to build momentum from. Discovery and awareness had to be entirely digital.
+
               </ProjectSectionText>
               <ProjectSectionText>
-                Budget and timeline were fixed. Any scope change needed a formal change control process to avoid delivery delays.
+                Sadak 2 launched during a period of intense public backlash toward Bollywood. The trailer became the second-most-disliked video on YouTube globally within days of going live. The campaign still had to run.
+
+              </ProjectSectionText>
+
+              <ProjectSectionText>
+                Managing Lootcase and Sadak 2 simultaneously meant running two campaigns with opposite emotional environments at the same time.
               </ProjectSectionText>
             </div>
+            <Image
+              src={image4}
+              width={940}
+              height={500}
+              placeholder={image5}
+              alt="Students at the University of New South Wales using the new collaborative annotation features"
+            />
           </ProjectSectionContent>
         </ProjectSection>
         <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow>
-              <ProjectSectionHeading> What I did</ProjectSectionHeading>
+              <ProjectSectionHeading> What I did across all five campaigns:</ProjectSectionHeading>
               <ProjectSectionText>
-                Ran the full project lifecycle from initiation through to post-delivery reporting.
+                Primary point of contact between production houses and the agency team. Translated briefs into execution plans. Managed expectation alignment with clients throughout.
+
               </ProjectSectionText>
               <ProjectSectionText>
-                At the start: defined the project scope with client stakeholders, built the project management
-                plan including schedule, cost, and resource baselines, created the RACI matrix across UX,
-                front-end, back-end, SEO, and content teams, and set up the dependency tracking across all
-                workstreams.
+               Led cross-functional teams across design, copy, social media, and media planning. Built delivery schedules and kept dependencies visible.
               </ProjectSectionText>
               <ProjectSectionText>
-                During delivery: coordinated daily across UX designers, front-end and back-end developers,
-                SEO specialists, and content teams. Acted as the primary client liaison for all four
-                stakeholders. Ran structured approval workflows to keep reviews moving without creating
-                bottlenecks. Managed a formal change control process so scope additions were assessed
-                for time and cost impact before being agreed.
+                Maintained risk and issue logs. Made fast escalation calls without waiting for situations to compound.
+
               </ProjectSectionText>
               <ProjectSectionText>
-                Coordinated with third-party vendors and external technology partners for the AI recipe
-                generator integration.
+                Monitored KPIs in real time. Delivered regular client updates and post-campaign reports with platform-level breakdowns.
               </ProjectSectionText>
               <ProjectSectionText>
-                At close: delivered the final performance report with engagement metrics and usage data.
-                Documented lessons learned and built the case study materials that were later used for the
-                industry award entries.
+                For OTT campaigns specifically:
+                  Coordinated virtual press interactions, influencer tie-ups, and digital-first launch events as replacements for physical promotion.
+                  Managed budget reallocations when physical event spend became unavailable.
+
+              </ProjectSectionText>
+
+              <ProjectSectionText>
+                For Sadak 2 specifically:
+              High-volume social listening throughout the campaign. Active brand safety monitoring across all platforms. Maintained client communication focused on what was within our control. Campaign delivered on schedule.
+
               </ProjectSectionText>
             </ProjectTextRow>
             <Image
-              src={sliceIrl}
+              src={image5}
               width={940}
               height={500}
-              placeholder={sliceIrlPlaceholder}
+              placeholder={image5}
               alt="Students at the University of New South Wales using the new collaborative annotation features"
             />
           </ProjectSectionContent>
@@ -230,40 +223,95 @@ on the brand website.
             <ProjectTextRow>
               <ProjectSectionHeading> Before vs after</ProjectSectionHeading>
               <ProjectSectionText>
-                Before Navigation followed Ministry org structure, not user mental models. Find Care and
-                Health Connect Registry hard to locate. ImmunizeBC content on a separate site entirely.
-                Public Health Alerts buried. Pages mixed clinical and public audiences without distinction.
+                This one doesn't have clean before and after states because each film is different. What changed across the two-year period was the delivery model itself.
 
               </ProjectSectionText>
               <ProjectSectionText>
-               After Structure built around how people search for health information. Find Care and Health
-                Connect Registry visible and accessible. ImmunizeBC consolidated into the main portal.
-                Public Health Alerts surfaced on the homepage. Cleaner reading levels across the platform.
-                WCAG 2.1 AA achieved.
+               2019 (theatrical): Physical events, coordinated nationwide launches, long lead times, standard press junkets.
+
+              </ProjectSectionText>
+              <ProjectSectionText>
+                2020 (OTT): Virtual press interactions, influencer activations replacing physical events, OTT-first discovery strategy, real-time sentiment management, faster pivots.
+
+              </ProjectSectionText>
+              <ProjectSectionText>
+                The skills that transferred: stakeholder communication, risk management, dependency tracking, keeping teams aligned under pressure. None of those changed. Everything around them did.
+
               </ProjectSectionText>
             </ProjectTextRow>
+            <Image
+              src={image3}
+              width={940}
+              height={500}
+              placeholder={image3}
+              alt="Students at the University of New South Wales using the new collaborative annotation features"
+            />
           </ProjectSectionContent>
         </ProjectSection>
 
-                <ProjectSection>
+        <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow>
-              <ProjectSectionHeading> Before vs after</ProjectSectionHeading>
+              <ProjectSectionHeading> Outcome</ProjectSectionHeading>
               <ProjectSectionText>
-                Before Navigation followed Ministry org structure, not user mental models. Find Care and
-                Health Connect Registry hard to locate. ImmunizeBC content on a separate site entirely.
-                Public Health Alerts buried. Pages mixed clinical and public audiences without distinction.
-
+               Chhichhore (Sept 2019): Rs 215 crore global box office. National Film Award for Best Feature Film in Hindi.
+               </ProjectSectionText>
+              <ProjectSectionText>
+                  Panga (Jan 2020): Rs 41.7 crore global gross. Strong digital engagement around women's empowerment narrative.
               </ProjectSectionText>
               <ProjectSectionText>
-               After Structure built around how people search for health information. Find Care and Health
-                Connect Registry visible and accessible. ImmunizeBC consolidated into the main portal.
-                Public Health Alerts surfaced on the homepage. Cleaner reading levels across the platform.
-                WCAG 2.1 AA achieved.
+                  Lootcase (Jul 2020): High completion rates and sustained positive sentiment during COVID OTT window.
               </ProjectSectionText>
+              <ProjectSectionText>
+                Sadak 2 (Aug 2020): Campaign delivered on schedule despite second-most-disliked trailer on YouTube globally.
+              </ProjectSectionText>
+              <ProjectSectionText>
+                  Laxmii (Nov 2020): Record-breaking Bollywood OTT premiere on Disney+ Hotstar at time of release. Burj Khalifa song: 200M+ YouTube views.
+               </ProjectSectionText>
             </ProjectTextRow>
           </ProjectSectionContent>
         </ProjectSection>
+                 <ProjectSection>
+          <ProjectSectionContent>
+            <ProjectTextRow>
+              <ProjectSectionHeading> Lesson</ProjectSectionHeading>
+              <ProjectSectionText>
+                Crisis management is project management under pressure.
+
+              </ProjectSectionText>
+              <ProjectSectionText>
+              The tools are the same. What changes is how fast you have to use them and how clearly you have to communicate.
+              </ProjectSectionText>
+
+              <ProjectSectionText>
+              The pandemic also removed any option of physical fallback. That forced real clarity about what mattered in each campaign and what had just been habit. Some things we stopped doing were things we probably should have stopped earlier.
+
+              </ProjectSectionText>
+              <ProjectSectionText>
+                The thing that stayed constant across all five: keeping a client focused on what is in their control is sometimes the most valuable thing a PM can do.
+
+              </ProjectSectionText>
+            </ProjectTextRow>
+            
+          </ProjectSectionContent>
+        </ProjectSection>
+
+
+                   <ProjectSection>
+          <ProjectSectionContent>
+            <ProjectTextRow>
+              <ProjectSectionHeading> Takeaway</ProjectSectionHeading>
+              <ProjectSectionText>
+               Build your risk log before you need it. On a high-visibility campaign, the question is not whether something will go wrong. It is whether your team has already decided what to do when it does.
+
+              </ProjectSectionText>
+
+            </ProjectTextRow>
+            
+          </ProjectSectionContent>
+        </ProjectSection>
+
+
       </ProjectContainer>
       <Footer />
     </Fragment>
