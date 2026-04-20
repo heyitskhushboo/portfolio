@@ -27,8 +27,8 @@ import image2 from `~/assets/Image for case study 2a.jpg`;
 import image3 from `~/assets/Image for case study 2b.jpg`;
 import image4 from `~/assets/Image for case study 3.png`;
 import image5 from `~/assets/Go Cheese case study 4.jpeg`;
-import mobileimage1 from `~/assets/bchealthlinkmobile1.png`;
-import mobileimage2 from `~/assets/bchealthlinkmobile2.png`;
+import mobileimage1 from `~/assets/gocheesemobile1.jpeg`;
+import mobileimage2 from `~/assets/gocheesemobile2.jpeg`;
 import image6 from `~/assets/go-cheese-ai-1.png`;
 import image7 from `~/assets/go-cheese-ai-2.png`;
 import {
@@ -68,7 +68,7 @@ export const GoCheese = () => {
           width={1280}
           height={800}
           placeholder={sliceBackgroundPlaceholder}
-          opacity={0.8}
+          opacity={0.5}
         />
         <ProjectHeader
           title={title}

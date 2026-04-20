@@ -7,6 +7,7 @@ uniform float shininess;
 uniform float opacity;
 
 uniform float time;
+uniform float themeMode; // 0.0 = dark, 1.0 = light
 varying vec2 vUv;
 varying vec3 newPosition;
 varying float noise;
@@ -41,9 +42,27 @@ void main() {
 
 	#include <clipping_planes_fragment>
 
-  vec3 color = vec3(vUv * (0.2 - 2.0 * noise), 1.0);
-  vec3 finalColors = vec3(color.b * 1.5, color.r, color.r);
-  vec4 diffuseColor = vec4(cos(finalColors * noise * 3.0), 1.0);
+  float t = clamp(vUv.x * 0.6 + vUv.y * 0.4 + noise * 0.3, 0.0, 1.0);
+
+  // Dark theme: rich navy (#1a1f5e) → blue-purple → dusty rose (#c4a8b8)
+  vec3 darkA = vec3(0.10, 0.12, 0.37);
+  vec3 darkB = vec3(0.40, 0.32, 0.45);
+  vec3 darkC = vec3(0.77, 0.66, 0.72);
+  vec3 darkColor = t < 0.5
+    ? mix(darkA, darkB, t * 2.0)
+    : mix(darkB, darkC, (t - 0.5) * 2.0);
+
+  // Light theme: sky blue (#a8d4f5) → white-lavender (#e8e4ff) → soft pink (#f5c6ec)
+  vec3 lightA = vec3(0.66, 0.83, 0.96);
+  vec3 lightB = vec3(0.91, 0.89, 1.00);
+  vec3 lightC = vec3(0.96, 0.78, 0.93);
+  vec3 lightColor = t < 0.5
+    ? mix(lightA, lightB, t * 2.0)
+    : mix(lightB, lightC, (t - 0.5) * 2.0);
+
+  vec3 baseColor = mix(darkColor, lightColor, themeMode);
+
+  vec4 diffuseColor = vec4(baseColor, 1.0);
   ReflectedLight reflectedLight = ReflectedLight(vec3(0.0), vec3(0.0), vec3(0.0), vec3(0.0));
   vec3 totalEmissiveRadiance = emissive;
 

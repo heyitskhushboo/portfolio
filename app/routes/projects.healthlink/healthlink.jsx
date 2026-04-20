@@ -67,7 +67,7 @@ export const HealthLink = () => {
           width={1280}
           height={800}
           placeholder={sliceBackgroundPlaceholder}
-          opacity={0.8}
+          opacity={0.5}
         />
         <ProjectHeader
           title={title}

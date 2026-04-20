@@ -71,7 +71,7 @@ export const DisplacementSphere = props => {
     material.current.onBeforeCompile = shader => {
       uniforms.current = UniformsUtils.merge([
         shader.uniforms,
-        { time: { type: 'f', value: 0 } },
+        { time: { type: 'f', value: 0 }, themeMode: { type: 'f', value: 0 } },
       ]);
 
       shader.uniforms = uniforms.current;
@@ -94,8 +94,8 @@ export const DisplacementSphere = props => {
   }, []);
 
   useEffect(() => {
-    const dirLight = new DirectionalLight(0xffffff, theme === 'light' ? 1.8 : 2.0);
-    const ambientLight = new AmbientLight(0xffffff, theme === 'light' ? 2.7 : 0.4);
+    const dirLight = new DirectionalLight(0xffffff, theme === 'light' ? 1.2 : 1.5);
+    const ambientLight = new AmbientLight(0xffffff, theme === 'light' ? 3.5 : 1.8);
 
     dirLight.position.z = 200;
     dirLight.position.x = 100;
@@ -103,6 +103,10 @@ export const DisplacementSphere = props => {
 
     lights.current = [dirLight, ambientLight];
     lights.current.forEach(light => scene.current.add(light));
+
+    if (uniforms.current) {
+      uniforms.current.themeMode.value = theme === 'light' ? 1.0 : 0.0;
+    }
 
     return () => {
       removeLights(lights.current);
