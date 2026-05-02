@@ -7,111 +7,38 @@ import { Section } from '~/components/section';
 import { Text } from '~/components/text';
 import { useReducedMotion } from 'framer-motion';
 import { useWindowSize } from '~/hooks';
-import { Link as RouterLink, useLoaderData } from '@remix-run/react';
-import { useState, useEffect } from 'react';
-import { formatDate } from '~/utils/date';
+import { useState } from 'react';
 import { cssProps } from '~/utils/style';
 import styles from './articles.module.css';
 
-function ArticlesPost({ slug, frontmatter, timecode, index }) {
-  const [hovered, setHovered] = useState(false);
-  const [dateTime, setDateTime] = useState(null);
-  const reduceMotion = useReducedMotion();
-  const { title, abstract, date, featured, banner } = frontmatter;
-
-  useEffect(() => {
-    setDateTime(formatDate(date));
-  }, [date, dateTime]);
-
-  const handleMouseEnter = () => {
-    setHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setHovered(false);
-  };
-
-  return (
-    <article
-      className={styles.post}
-      data-featured={!!featured}
-      style={index !== undefined ? cssProps({ delay: index * 100 + 200 }) : undefined}
-    >
-      {featured && (
-        <Text className={styles.postLabel} size="s">
-          Featured
-        </Text>
-      )}
-      {featured && !!banner && (
-        <div className={styles.postImage}>
-          <Image
-            noPauseButton
-            play={!reduceMotion ? hovered : undefined}
-            src={banner}
-            placeholder={`${banner.split('.')[0]}-placeholder.jpg`}
-            alt=""
-            role="presentation"
-          />
-        </div>
-      )}
-      <RouterLink
-        unstable_viewTransition
-        prefetch="intent"
-        to={`/articles/${slug}`}
-        className={styles.postLink}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <div className={styles.postDetails}>
-          <div aria-hidden className={styles.postDate}>
-            <Divider notchWidth="64px" notchHeight="8px" />
-            {featured ? 'March 2026' : '2023 - 2025'}
-          </div>
-          <Heading as="h2" level={featured ? 2 : 4}>
-            {featured
-              ? 'PMP Certification'
-              : 'Coordinator, Content Design HealthLink BC, BC Government'}
-          </Heading>
-          <Text size={featured ? 'l' : 's'} as="p">
-            {featured
-              ? 'Bakchodi plus PMP certification (Khushi to Update section)'
-              : 'Content design, plain language, WCAG compliance, and delivery coordination on a public health platform serving 16 million people annually. Cross-ministry stakeholders. Drupal CMS. Thousands of pages.'}
-          </Text>
-          <div className={styles.postFooter}>
-            
-            <Text className={styles.timecode} size="s">
-              Vancouver, Canada
-            </Text>
-          </div>
-        </div>
-      </RouterLink>
-      {featured && (
-        <Text aria-hidden className={styles.postTag} size="s">
-          477
-        </Text>
-      )}
-    </article>
-  );
-}
-
-const placeholderExperiences = [
+const experiences = [
   {
-    dates: '2018 to 2021',
-    title: 'Project Manager Dentsu Creative (WATConsult), Mumbai',
+    dates: '2023 – 2025',
+    title: 'Digital Project Manager, Content and Experience Delivery',
+    company: 'HealthLink BC · BC Government',
+    location: 'Vancouver',
     description:
-      'Integrated digital campaign delivery for GO Cheese, Croma Retail, Tata CLiQ, Piramal Pharma, Godrej Appliances, Home Centre India, and FOX Star Studios. Film releases including Chhichhore, Laxmii, Panga, Lootcase, and Sadak 2.',
-    location: 'Mumbai, India',
+      'Delivery coordination, UX content design, and digital project management on BC\'s primary public health platform, serving 16 million people annually. WCAG 2.1 compliance, Drupal CMS migration at scale, cross-ministry stakeholder alignment.',
   },
   {
-    dates: '2021 - 2023',
-    title: 'MBA',
+    dates: '2018 – 2021',
+    title: 'Senior Project Manager, Digital Experience',
+    company: 'Dentsu Creative (WATConsult)',
+    location: 'Mumbai, India',
     description:
-      'Bakchodi + MBA (Khushi to update)',
-    location: 'Vancouver Ikala, Canada',
+      'Integrated digital campaign delivery for GO Cheese, Croma Retail, Tata CLiQ, Piramal Pharma, Godrej Appliances, Home Centre India, and FOX Star Studios. Film releases: Chhichhore, Laxmii, Panga, Lootcase, Sadak 2.',
+  },
+  {
+    dates: '2021 – 2023',
+    title: 'MBA',
+    company: '',
+    location: 'Vancouver',
+    description: 'Deliberate pause. Worth it.',
+    isBreak: true,
   },
 ];
 
-function ExperiencePost({ dates, title, description, location, index }) {
+function ExperiencePost({ dates, title, company, location, description, isBreak, index }) {
   return (
     <article
       className={styles.post}
@@ -127,7 +54,12 @@ function ExperiencePost({ dates, title, description, location, index }) {
           <Heading as="h2" level={4}>
             {title}
           </Heading>
-          <Text size="s" as="p">
+          {company && (
+            <Text size="s" as="p" className={styles.company}>
+              {company}
+            </Text>
+          )}
+          <Text size="s" as="p" className={isBreak ? styles.breakText : undefined}>
             {description}
           </Text>
           <div className={styles.postFooter}>
@@ -141,8 +73,58 @@ function ExperiencePost({ dates, title, description, location, index }) {
   );
 }
 
+function FeaturedCert() {
+  const [hovered, setHovered] = useState(false);
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <article
+      className={styles.post}
+      data-featured="true"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <Text className={styles.postLabel} size="s">
+        Certification
+      </Text>
+      <div className={styles.postImage}>
+        <Image
+          noPauseButton
+          play={!reduceMotion ? hovered : undefined}
+          src="/static/modern-styling-in-react-banner.jpg"
+          placeholder="/static/modern-styling-in-react-banner-placeholder.jpg"
+          alt=""
+          role="presentation"
+        />
+      </div>
+      <div className={styles.postLink}>
+        <div className={styles.postDetails}>
+          <div aria-hidden className={styles.postDate}>
+            <Divider notchWidth="64px" notchHeight="8px" />
+            PMP Certified
+          </div>
+          <Heading as="h2" level={2}>
+            Project Management Professional
+          </Heading>
+          <Text size="l" as="p">
+            Formalising eight years of delivery experience across agency, public sector, and
+            platform work.
+          </Text>
+          <div className={styles.postFooter}>
+            <Text className={styles.timecode} size="s">
+              PMI
+            </Text>
+          </div>
+        </div>
+      </div>
+      <Text aria-hidden className={styles.postTag} size="s">
+        PMI
+      </Text>
+    </article>
+  );
+}
+
 export function Articles() {
-  const { posts, featured } = useLoaderData();
   const { width } = useWindowSize();
   const singleColumnWidth = 1190;
   const isSingleColumn = width <= singleColumnWidth;
@@ -159,16 +141,13 @@ export function Articles() {
   const postList = (
     <div className={styles.list}>
       {!isSingleColumn && postsHeader}
-      {posts.map(({ slug, ...post }, index) => (
-        <ArticlesPost key={slug} slug={slug} index={index} {...post} />
-      ))}
-      {placeholderExperiences.map((exp, index) => (
+      {experiences.map((exp, index) => (
         <ExperiencePost key={index} index={index} {...exp} />
       ))}
     </div>
   );
 
-  const featuredPost = <ArticlesPost {...featured} />;
+  const featuredPost = <FeaturedCert />;
 
   return (
     <article className={styles.articles}>

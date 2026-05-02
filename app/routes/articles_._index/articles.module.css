@@ -387,3 +387,15 @@
     animation: fade-in 0.8s var(--bezierFastoutSlowin) forwards 0.4s;
   }
 }
+
+.company {
+  color: var(--primary);
+  font-weight: var(--fontWeightMedium);
+  margin-top: calc(var(--spaceS) * -1);
+  letter-spacing: 0.01em;
+}
+
+.breakText {
+  font-style: italic;
+  color: var(--textLight);
+}
