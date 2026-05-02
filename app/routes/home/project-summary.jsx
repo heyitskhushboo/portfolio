@@ -9,9 +9,8 @@ import { Transition } from '~/components/transition';
 import { Loader } from '~/components/loader';
 import { useWindowSize } from '~/hooks';
 import { Suspense, lazy, useState } from 'react';
-import { cssProps, media } from '~/utils/style';
+import { media } from '~/utils/style';
 import { useHydrated } from '~/hooks/useHydrated';
-import katakana from './katakana.svg';
 import styles from './project-summary.module.css';
 
 const Model = lazy(() =>
@@ -25,6 +24,7 @@ export function ProjectSummary({
   index,
   title,
   description,
+  metrics,
   model,
   buttonText,
   buttonLink,
@@ -38,29 +38,12 @@ export function ProjectSummary({
   const isHydrated = useHydrated();
   const titleId = `${id}-title`;
   const isMobile = width <= media.tablet;
-  const svgOpacity = theme === 'light' ? 0.7 : 1;
   const indexText = index < 10 ? `0${index}` : index;
   const phoneSizes = `(max-width: ${media.tablet}px) 30vw, 20vw`;
   const laptopSizes = `(max-width: ${media.tablet}px) 80vw, 40vw`;
 
   function handleModelLoad() {
     setModelLoaded(true);
-  }
-
-  function renderKatakana(device, visible) {
-    return (
-      <svg
-        type="project"
-        data-visible={visible && modelLoaded}
-        data-light={theme === 'light'}
-        style={cssProps({ opacity: svgOpacity })}
-        className={styles.svg}
-        data-device={device}
-        viewBox="0 0 751 136"
-      >
-        <use href={`${katakana}#katakana-project`} />
-      </svg>
-    );
   }
 
   function renderDetails(visible) {
@@ -89,6 +72,16 @@ export function ProjectSummary({
         <Text className={styles.description} data-visible={visible} as="p">
           {description}
         </Text>
+        {metrics && (
+          <div className={styles.metrics} data-visible={visible}>
+            {metrics.map((metric, i) => (
+              <span key={i} className={styles.metricItem}>
+                {i > 0 && <span className={styles.metricDot}>·</span>}
+                {metric}
+              </span>
+            ))}
+          </div>
+        )}
         <div className={styles.button} data-visible={visible}>
           <Button iconHoverShift href={buttonLink} iconEnd="arrow-right">
             {buttonText}
@@ -103,7 +96,6 @@ export function ProjectSummary({
       <div className={styles.preview}>
         {model.type === 'laptop' && (
           <>
-            {renderKatakana('laptop', visible)}
             <div className={styles.model} data-device="laptop">
               {!modelLoaded && (
                 <Loader center className={styles.loader} data-visible={visible} />
@@ -133,7 +125,6 @@ export function ProjectSummary({
         )}
         {model.type === 'phone' && (
           <>
-            {renderKatakana('phone', visible)}
             <div className={styles.model} data-device="phone">
               {!modelLoaded && (
                 <Loader center className={styles.loader} data-visible={visible} />

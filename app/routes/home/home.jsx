@@ -103,6 +103,7 @@ export const Home = () => {
         index={1}
         title=" HealthLink BC"
         description="16 million people used this platform. Most couldn't find what they needed."
+        metrics={['16M+ annual users', 'WCAG 2.1 compliant', '25.5M combined encounters 2024/25']}
         buttonText="View project"
         buttonLink="/projects/healthlink"
         model={{
