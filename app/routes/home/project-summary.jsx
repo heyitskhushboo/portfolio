@@ -73,13 +73,16 @@ export function ProjectSummary({
           {description}
         </Text>
         {metrics && (
-          <div className={styles.metrics} data-visible={visible}>
-            {metrics.map((metric, i) => (
-              <span key={i} className={styles.metricItem}>
-                {i > 0 && <span className={styles.metricDot}>·</span>}
-                {metric}
-              </span>
-            ))}
+          <div className={styles.metricsWrapper} data-visible={visible}>
+            <span className={styles.metricsLabel}>Metrics</span>
+            <div className={styles.metrics}>
+              {metrics.map((metric, i) => (
+                <span key={i} className={styles.metricItem}>
+                  <span className={styles.metricDot}>·</span>
+                  {metric}
+                </span>
+              ))}
+            </div>
           </div>
         )}
         <div className={styles.button} data-visible={visible}>

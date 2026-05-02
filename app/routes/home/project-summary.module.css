@@ -257,14 +257,12 @@
   }
 }
 
-.metrics {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--spaceS);
+.metricsWrapper {
   margin-bottom: var(--spaceXL);
-  font-size: var(--fontSizeBodyS);
-  color: var(--textLight);
+  padding: var(--spaceM) var(--spaceL);
+  border-left: 2px solid var(--primary);
+  background: color-mix(in srgb, var(--primary) 5%, transparent);
+  border-radius: 0 var(--borderRadiusS) var(--borderRadiusS) 0;
   transition-property: opacity;
   transition-timing-function: var(--bezierFastoutSlowin);
   transition-duration: var(--durationXL);
@@ -282,15 +280,35 @@
   }
 }
 
+.metricsLabel {
+  display: block;
+  font-size: 10px;
+  font-weight: var(--fontWeightMedium);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: var(--spaceXS);
+}
+
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spaceXS) var(--spaceS);
+  font-size: var(--fontSizeBodyS);
+  color: var(--textLight);
+}
+
 .metricItem {
   display: flex;
   align-items: center;
-  gap: var(--spaceS);
+  gap: var(--spaceXS);
 }
 
 .metricDot {
   color: var(--primary);
   font-weight: var(--fontWeightMedium);
+  line-height: 1;
 }
 
 .button {
