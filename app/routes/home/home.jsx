@@ -125,6 +125,7 @@ export const Home = () => {
         index={2}
         title="GO Cheese AI-based Interactive Website"
         description="The brief was to make people stay on a cheese brand website. So we gave them something to actually do."
+        metrics={['8,778 sessions globally', '27,790 recipe views','1,000+ user recipes','3 industry awards']}
         buttonText="View project"
         buttonLink="/projects/gocheese"
         model={{
@@ -145,6 +146,7 @@ export const Home = () => {
         index={3}
         title="GO Cheese Lovers Day Campaign"
         description="One day. Five platforms. It trended on Twitter for four hours."
+        metrics={['19.3M Facebook reach','10.28M YouTube views','Engagement beat target by 716K']}
         buttonText="View project"
         buttonLink="/projects/gocheeseloversday"
         model={{
@@ -165,6 +167,7 @@ export const Home = () => {
         index={4}
         title="High-Scale Creative Campaigns"
         description=" Five film releases. One pandemic. Release dates that never move."
+        metrics={['₹215Cr box office (Chhichhore)','200M+ YouTube views (Laxmii)','5 campaigns delivered']}
         buttonText="View project"
         buttonLink="/projects/creativecampaign"
         model={{
