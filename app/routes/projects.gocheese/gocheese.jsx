@@ -1,26 +1,10 @@
-import sliceAnnotationLarge from '~/assets/slice-annotation-large.png';
-import sliceAnnotationPlaceholder from '~/assets/slice-annotation-placeholder.png';
-import sliceAnnotation from '~/assets/slice-annotation.png';
-import sliceAppLarge from '~/assets/slice-app-large.jpg';
 import sliceAppPlaceholder from '~/assets/slice-app-placeholder.jpg';
-import sliceApp from '~/assets/slice-app.jpg';
-import sliceBackgroundBarLarge from '~/assets/slice-background-bar-large.jpg';
-import sliceBackgroundBarPlaceholder from '~/assets/slice-background-bar-placeholder.jpg';
-import sliceBackgroundBar from '~/assets/slice-background-bar.jpg';
 import sliceBackgroundLarge from '~/assets/slice-background-large.jpg';
 import sliceBackgroundPlaceholder from '~/assets/slice-background-placeholder.jpg';
 import sliceBackground from '~/assets/slice-background.jpg';
 import sliceIrlPlaceholder from '~/assets/slice-irl-placeholder.jpg';
-import sliceIrl from '~/assets/slice-irl.jpg';
-import sliceSidebarAnnotationsLarge from '~/assets/slice-sidebar-annotations-large.png';
 import sliceSidebarAnnotationsPlaceholder from '~/assets/slice-sidebar-annotations-placeholder.png';
-import sliceSidebarAnnotations from '~/assets/slice-sidebar-annotations.png';
-import sliceSidebarLayersLarge from '~/assets/slice-sidebar-layers-large.png';
 import sliceSidebarLayersPlaceholder from '~/assets/slice-sidebar-layers-placeholder.png';
-import sliceSidebarLayers from '~/assets/slice-sidebar-layers.png';
-import sliceSlidesLarge from '~/assets/slice-slides-large.jpg';
-import sliceSlidesPlaceholder from '~/assets/slice-slides-placeholder.jpg';
-import sliceSlides from '~/assets/slice-slides.jpg';
 import { Footer } from '~/components/footer';
 import { Image } from '~/components/image';
 import image2 from `~/assets/Image for case study 2a.jpg`;
@@ -48,11 +32,17 @@ import { media } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
 import styles from './gocheese.module.css';
 
-
-const title = 'GO Cheese AI-based Interactive Website';
+const title = 'GO Cheese AI Interactive Website';
 const description =
-  'The brief was to make people spend more time on a cheese brand website. So we gave them something to actually do.';
-const roles = ['End-to-end project delivery', 'Stakeholder management across four client contacts', 'Cross-functional team coordination', 'Approval workflows and change control' ,'Vendor and third-party coordination' ,'Post-delivery reporting and case study documentation'];
+  'The brief was to make people stay on a cheese website. So we gave them something to actually do.';
+const roles = [
+  'End-to-end project delivery',
+  'Stakeholder management across four client contacts',
+  'Cross-functional coordination across UX, front-end, back-end, SEO, and content teams',
+  'Approval workflows and change control',
+  'Vendor and third-party coordination for AI integration',
+  'Post-delivery reporting and award entry documentation',
+];
 
 export const meta = () => {
   return baseMeta({ title, description, prefix: 'Projects' });
@@ -60,7 +50,7 @@ export const meta = () => {
 
 export const GoCheese = () => {
   return (
-   <Fragment>
+    <Fragment>
       <ProjectContainer className={styles.slice}>
         <ProjectBackground
           src={sliceBackground}
@@ -73,7 +63,7 @@ export const GoCheese = () => {
         <ProjectHeader
           title={title}
           description={description}
-          url="https://www.healthlinkbc.ca/"
+          url="https://gocheese.co.in"
           roles={roles}
         />
         <ProjectSection padding="top">
@@ -83,17 +73,21 @@ export const GoCheese = () => {
               width={800}
               height={500}
               placeholder={image5}
-              alt="The Slice web application showing a selected user annotation."
+              alt="GO Cheese interactive website on device mockups alongside campaign branding."
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 90vw, 80vw`}
             />
           </ProjectSectionContent>
         </ProjectSection>
+
         <ProjectSection>
           <ProjectSectionColumns centered className={styles.columns}>
             <div className={styles.imagesText}>
-              <ProjectSectionHeading>Intro</ProjectSectionHeading>
+              <ProjectSectionHeading>Project Intro</ProjectSectionHeading>
               <ProjectSectionText>
-                I was Project Manager on the GO Cheese interactive website, built for Parag Milk Foods through Dentsu Creative (WATConsult) in Mumbai. The project centred on an AI-enabled recipe generator that let users build customised recipes using GO Cheese products directly on the brand website.
+                I was Project Manager on the GO Cheese interactive website, built for Parag Milk
+                Foods through Dentsu Creative (WATConsult) in Mumbai. The project centred on an
+                AI-enabled recipe generator that let users build recipes using GO Cheese products
+                directly on the brand website.
               </ProjectSectionText>
             </div>
             <div className={styles.sidebarImages}>
@@ -103,7 +97,7 @@ export const GoCheese = () => {
                 width={350}
                 height={750}
                 placeholder={sliceSidebarLayersPlaceholder}
-                alt="The layers sidebar design, now with user profiles."
+                alt="GO Cheese recipe generator on mobile."
                 sizes={`(max-width: ${media.mobile}px) 200px, 343px`}
               />
               <Image
@@ -112,194 +106,238 @@ export const GoCheese = () => {
                 width={350}
                 height={750}
                 placeholder={sliceSidebarAnnotationsPlaceholder}
-                alt="Multiple user annotations on a shared layer."
+                alt="GO Cheese product range on mobile."
                 sizes={`(max-width: ${media.mobile}px) 200px, 343px`}
               />
             </div>
           </ProjectSectionColumns>
         </ProjectSection>
+
         <ProjectSection light>
           <ProjectSectionContent>
             <ProjectTextRow>
-              <ProjectSectionHeading> The problem</ProjectSectionHeading>
+              <ProjectSectionHeading>The problem</ProjectSectionHeading>
               <ProjectSectionText>
-                The brand had a website. People visited, looked at products, and left. There was nothing to do there.
-
+                The brand had a website. People visited, looked at products, and left.
               </ProjectSectionText>
               <ProjectSectionText>
-               The brief was to change that. Give users a reason to stay, something to interact with, something that connected the product to actual food they might make. Passive browsing wasn't working. The brand wanted engagement, and the only way to get it was to build something worth engaging with.
-
+                The brief was to change that. Give users a reason to stay — something to interact
+                with, something that connected the product to food they might actually make. Passive
+                browsing wasn't working. The answer was to build something worth engaging with.
               </ProjectSectionText>
               <ProjectSectionText>
-                The product range was the starting point. GO Cheese makes processed squares, slices, spreads, pizza cheese. All of it usable in real recipes. The insight was simple: let people build something with it.
-
-            </ProjectSectionText>
+                The product range was the starting point. GO Cheese makes processed squares,
+                slices, spreads, pizza cheese. All usable in real recipes. The insight was simple:
+                let people build something with it.
+              </ProjectSectionText>
             </ProjectTextRow>
             <Image
               srcSet={`${image2} 800w, ${image2} 1920w`}
               width={800}
               height={500}
               placeholder={image2}
-              alt="The new My Slides tab in slice, showing annotated and favorited slides."
+              alt="GO Cheese website product listing before the interactive redesign."
               sizes={`(max-width: ${media.mobile}px) 500px, (max-width: ${media.tablet}px) 800px, 1000px`}
             />
           </ProjectSectionContent>
         </ProjectSection>
+
         <ProjectSection padding="top">
           <ProjectSectionContent className={styles.grid}>
             <div className={styles.gridText}>
               <ProjectSectionHeading>Constraints</ProjectSectionHeading>
               <ProjectSectionText>
-                AI-powered functionality in 2018 on a consumer brand website was not a simple build. The recipe generator needed to work intuitively for a general audience, not a tech-savvy one.
-                Four client stakeholders with different priorities and approval speeds. Brand, marketing, product, and technical teams all had a say.
-
+                AI-powered functionality in 2018 on a consumer brand website was not a simple
+                build. The recipe generator had to work intuitively for a general audience, not a
+                tech-savvy one.
               </ProjectSectionText>
-                            <ProjectSectionText>
-                The website had to showcase the full GO Cheese product range, both existing and new, without feeling like a product catalogue. That tension ran through every UX decision.
-Budget and timeline were fixed. Any scope change needed a formal change control process to avoid delivery delays.
-
+              <ProjectSectionText>
+                Four client stakeholders with different priorities and approval speeds — brand,
+                marketing, product, and technical teams all had a say.
+              </ProjectSectionText>
+              <ProjectSectionText>
+                The website had to showcase the full GO Cheese range, existing and new, without
+                feeling like a product catalogue. That tension ran through every UX decision.
+              </ProjectSectionText>
+              <ProjectSectionText>
+                Budget and timeline were fixed. Any scope change needed formal change control.
               </ProjectSectionText>
             </div>
           </ProjectSectionContent>
         </ProjectSection>
+
         <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow>
-             
-              <ProjectSectionHeading> What I did</ProjectSectionHeading>
+              <ProjectSectionHeading>What I did</ProjectSectionHeading>
               <ProjectSectionText>
-                    Ran the full project lifecycle from initiation through to post-delivery reporting.
+                At the start: defined project scope with client stakeholders, built the project
+                management plan including schedule, cost, and resource baselines, created a RACI
+                matrix across seven specialist teams, and set up dependency tracking across all
+                workstreams.
               </ProjectSectionText>
-                            <ProjectSectionText>
-                    At the start: defined the project scope with client stakeholders, built the project management plan including schedule, cost, and resource baselines, created the RACI matrix across UX, front-end, back-end, SEO, and content teams, and set up the dependency tracking across all workstreams.
-
+              <ProjectSectionText>
+                During delivery: coordinated daily across UX designers, front-end and back-end
+                developers, SEO specialists, and content teams. Acted as primary client liaison for
+                all four stakeholders. Ran structured approval workflows to keep reviews moving
+                without creating bottlenecks. Managed formal change control so scope additions were
+                assessed for time and cost before being agreed.
               </ProjectSectionText>
-                            <ProjectSectionText>
-                   During delivery: coordinated daily across UX designers, front-end and back-end developers, SEO specialists, and content teams. Acted as the primary client liaison for all four stakeholders. Ran structured approval workflows to keep reviews moving without creating bottlenecks. Managed a formal change control process so scope additions were assessed for time and cost impact before being agreed.
-
+              <ProjectSectionText>
+                Coordinated with third-party vendors for the AI recipe generator integration.
               </ProjectSectionText>
-                                          <ProjectSectionText>
-                  Coordinated with third-party vendors and external technology partners for the AI recipe generator integration.
-                  At close: delivered the final performance report with engagement metrics and usage data. Documented lessons learned and built the case study materials that were later used for the industry award entries.
-
+              <ProjectSectionText>
+                At close: delivered the final performance report with engagement metrics and usage
+                data. Documented lessons learned and built the case study materials used for
+                industry award entries.
               </ProjectSectionText>
             </ProjectTextRow>
-             <Image
+            <Image
               src={image3}
               width={940}
               height={500}
               placeholder={sliceIrlPlaceholder}
-              alt="Students at the University of New South Wales using the new collaborative annotation features"
+              alt="GO Cheese Cheesy Recipe Generator in use."
             />
           </ProjectSectionContent>
         </ProjectSection>
 
-
-        <ProjectSection>
+        <ProjectSection light>
           <ProjectSectionContent>
             <ProjectTextRow>
-              <ProjectSectionHeading> What we built
-</ProjectSectionHeading>
+              <ProjectSectionHeading>What we built</ProjectSectionHeading>
               <ProjectSectionText>
-               The Cheesy Recipe Generator let users pick ingredients from a dropdown or drag them onto a plate, then generate a recipe using GO Cheese products. A live-time tracker showed recipes being built in real time across the site.
-
+                The Cheesy Recipe Generator let users pick ingredients from a dropdown or drag them
+                onto a plate, then generate a recipe using GO Cheese products. A live tracker showed
+                recipes being built in real time across the site.
               </ProjectSectionText>
               <ProjectSectionText>
-              Each recipe page showcased specific products from the GO Cheese range. Users could build their own and submit it, creating over 1,000 user-generated recipe pages by the end of the campaign.
-The visual design gave the website a new identity alongside the generator, moving it away from a static product catalogue.
-
+                Each recipe page featured specific GO Cheese products. Users could build and submit
+                their own — creating over 1,000 user-generated recipe pages by the end of the
+                campaign.
               </ProjectSectionText>
-              </ProjectTextRow>
+            </ProjectTextRow>
           </ProjectSectionContent>
         </ProjectSection>
 
         <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow>
-              <ProjectSectionHeading> Before vs after</ProjectSectionHeading>
-              <ProjectSectionText>
-                Before : Static brand website. Product listings. No reason to interact. Average time on site low. No user contribution or participation.
-
-              </ProjectSectionText>
-              <ProjectSectionText>
-              After : Interactive recipe builder on site. Users generating and submitting their own recipes. 1,000+ user-created recipe pages live. Average session duration of 2 minutes 28 seconds. 27,790 recipe views. 8,778 sessions globally.
-
-              </ProjectSectionText>
+              <ProjectSectionHeading>Before vs After</ProjectSectionHeading>
             </ProjectTextRow>
+            <div className={styles.beforeAfter}>
+              <div className={styles.beforeColumn}>
+                <span className={styles.beforeLabel}>Before</span>
+                <ul className={styles.compareList}>
+                  <li>Static brand website with product listings</li>
+                  <li>No reason to interact or return</li>
+                  <li>Average time on site low</li>
+                  <li>No user contribution or participation</li>
+                </ul>
+              </div>
+              <div className={styles.afterColumn}>
+                <span className={styles.afterLabel}>After</span>
+                <ul className={styles.compareList}>
+                  <li>Interactive recipe builder live on site</li>
+                  <li>Users generating and submitting their own recipes</li>
+                  <li>1,000+ user-created recipe pages</li>
+                  <li>Average session: 2 minutes 28 seconds</li>
+                  <li>27,790 recipe views. 8,778 sessions globally.</li>
+                </ul>
+              </div>
+            </div>
             <Image
               src={image4}
               width={940}
               height={500}
               placeholder={sliceIrlPlaceholder}
-              alt="Students at the University of New South Wales using the new collaborative annotation features"
+              alt="GO Cheese interactive recipe builder showing live recipe creation."
             />
           </ProjectSectionContent>
         </ProjectSection>
 
-        <ProjectSection>
+        <ProjectSection light>
           <ProjectSectionContent>
             <ProjectTextRow>
-              <ProjectSectionHeading> Outcome</ProjectSectionHeading>
-              <ProjectSectionText>
-                Numbers from the project report.
-
-              </ProjectSectionText>
-              <ProjectSectionText>
-               8,778 website sessions globally. 27,790 recipe views. 2 minutes 28 seconds average session duration. 1,000+ user-generated recipe pages. Three digital industry awards.
-              </ProjectSectionText>
+              <ProjectSectionHeading>Outcome</ProjectSectionHeading>
+              <ProjectSectionText>Numbers from the project report.</ProjectSectionText>
             </ProjectTextRow>
+            <div className={styles.outcomeStats}>
+              <div className={styles.statItem}>
+                <span className={styles.statValue}>8,778</span>
+                <span className={styles.statLabel}>Website sessions globally</span>
+              </div>
+              <div className={styles.statItem}>
+                <span className={styles.statValue}>27,790</span>
+                <span className={styles.statLabel}>Recipe views</span>
+              </div>
+              <div className={styles.statItem}>
+                <span className={styles.statValue}>2m 28s</span>
+                <span className={styles.statLabel}>Avg session duration</span>
+              </div>
+              <div className={styles.statItem}>
+                <span className={styles.statValue}>1,000+</span>
+                <span className={styles.statLabel}>User-generated recipes</span>
+              </div>
+            </div>
+            <div className={styles.outcomeNotes}>
+              <p className={styles.outcomeNote}>Three digital industry awards</p>
+            </div>
             <Image
               src={image7}
               width={940}
               height={500}
               placeholder={sliceIrlPlaceholder}
-              alt="Students at the University of New South Wales using the new collaborative annotation features"
+              alt="GO Cheese AI recipe generator interface."
             />
           </ProjectSectionContent>
         </ProjectSection>
-
-       <ProjectSection>
-          <ProjectSectionContent>
-            <ProjectTextRow>
-              <ProjectSectionHeading> Lesson</ProjectSectionHeading>
-              <ProjectSectionText>
-                The difference between a PM who delivers a brief and a PM who delivers a good product is whether they stay close enough to the UX thinking to catch problems early.
-              </ProjectSectionText>
-              <ProjectSectionText>
-              On this project, the approval workflow mattered as much as the build itself. Four stakeholders with different priorities meant every review cycle had the potential to slow things down or introduce conflicting feedback late in the process. Getting alignment earlier, and building a change control process that people actually used, kept the timeline intact.
-
-              </ProjectSectionText>
-
-              <ProjectSectionText>
-             Coordinating across seven types of specialists simultaneously (UX, front-end, back-end, SEO, content, vendors, and the client team) meant the RACI had to be genuinely clear, not just a document that existed. People needed to know their lane without being asked.
-
-              </ProjectSectionText>
-            </ProjectTextRow>
-             <Image
-              src={image6}
-              width={940}
-              height={500}
-              placeholder={image6}
-              alt="Students at the University of New South Wales using the new collaborative annotation features"
-            />
-          </ProjectSectionContent>
-        </ProjectSection>
-
 
         <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow>
-              <ProjectSectionHeading> Takeaway</ProjectSectionHeading>
+              <ProjectSectionHeading>Lesson</ProjectSectionHeading>
               <ProjectSectionText>
-                When you are building something interactive for a consumer audience, the PM's job is to protect the UX from the complexity of the build. Developers will solve for technical feasibility. Clients will push for features. Someone has to hold the line on what the user actually experiences.
+                The difference between a PM who delivers a brief and a PM who delivers a good
+                product is whether they stay close enough to the UX thinking to catch problems
+                early.
               </ProjectSectionText>
               <ProjectSectionText>
-              If your stakeholder review process is creating conflicting feedback late in the build, the problem is not the feedback. It is that alignment was not established clearly enough at the start.
+                On this project, the approval workflow mattered as much as the build. Four
+                stakeholders with different priorities meant every review cycle could slow things
+                down or introduce conflicting feedback late in the process. Getting alignment
+                earlier — and building a change control process people actually used — kept the
+                timeline intact.
               </ProjectSectionText>
-              </ProjectTextRow>
+            </ProjectTextRow>
+            <Image
+              src={image6}
+              width={940}
+              height={500}
+              placeholder={image6}
+              alt="GO Cheese AI recipe generator full interface view."
+            />
           </ProjectSectionContent>
         </ProjectSection>
 
+        <ProjectSection>
+          <ProjectSectionContent>
+            <ProjectTextRow>
+              <ProjectSectionHeading>Takeaway</ProjectSectionHeading>
+              <ProjectSectionText>
+                When you're building something interactive for a consumer audience, the PM's job is
+                to protect the UX from the complexity of the build. Developers solve for technical
+                feasibility. Clients push for features. Someone has to hold the line on what the
+                user actually experiences.
+              </ProjectSectionText>
+              <ProjectSectionText>
+                If your stakeholder review process is generating conflicting feedback late in the
+                build, the problem isn't the feedback. It's that alignment wasn't established
+                clearly enough at the start.
+              </ProjectSectionText>
+            </ProjectTextRow>
+          </ProjectSectionContent>
+        </ProjectSection>
 
       </ProjectContainer>
       <Footer />
