@@ -22,7 +22,7 @@ export const navLinks = [
 export const socialLinks = [
   {
     label: 'LinkedIn',
-    url: 'https://www.linkedin.com/',
+    url: 'linkedin.com/in/khushboo-verma257/',
     icon: 'linkedin',
   },
   {
