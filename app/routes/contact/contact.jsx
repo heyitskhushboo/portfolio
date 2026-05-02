@@ -79,7 +79,7 @@ export const Contact = () => {
                 as="p"
                 style={getDelay(tokens.base.durationS, initDelay, 0.5)}
               >
-                Looking for digital PM, UX strategy, and digital experience roles in Vancouver. If
+                Looking for digital PM, UX strategy, and digital experience roles in Vancouver? If
                 something sounds like a fit, reach out.
               </Text>
               <div className={styles.testimonials}>
