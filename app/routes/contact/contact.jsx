@@ -11,6 +11,7 @@ import { tokens } from '~/components/theme-provider/theme';
 import { Transition } from '~/components/transition';
 import { useFormInput } from '~/hooks';
 import { useRef } from 'react';
+import { useFetcher } from '@remix-run/react';
 import { cssProps, msToNum, numToMs } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
 import styles from './contact.module.css';
@@ -19,7 +20,7 @@ export const meta = () => {
   return baseMeta({
     title: 'Contact',
     description:
-      'Send me a message if you\'re interested in discussing a project or if you just want to say hi',
+      "Send me a message if you're interested in discussing a project or if you just want to say hi",
   });
 };
 
@@ -46,7 +47,11 @@ export const Contact = () => {
   const email = useFormInput('');
   const message = useFormInput('');
   const initDelay = tokens.base.durationS;
-  const sending = false;
+  const fetcher = useFetcher();
+
+  const sending = fetcher.state !== 'idle';
+  const sent = fetcher.data?.status === 'success';
+  const sendError = fetcher.data?.status === 'error' ? fetcher.data.error : null;
 
   return (
     <Section className={styles.contact}>
@@ -79,7 +84,7 @@ export const Contact = () => {
                 as="p"
                 style={getDelay(tokens.base.durationS, initDelay, 0.5)}
               >
-                Looking for digital PM, UX strategy, and digital experience roles in Vancouver? If
+                Looking for digital PM, UX strategy, and digital experience roles in Vancouver. If
                 something sounds like a fit, reach out.
               </Text>
               <div className={styles.testimonials}>
@@ -111,50 +116,71 @@ export const Contact = () => {
               </div>
             </div>
 
-            <form className={styles.form}>
-              {/* Hidden honeypot field to identify bots */}
-              <Input
-                className={styles.botkiller}
-                label="Name"
-                name="name"
-                maxLength={MAX_EMAIL_LENGTH}
-              />
-              <Input
-                required
-                className={styles.input}
-                data-status={status}
-                style={getDelay(tokens.base.durationXS, initDelay)}
-                autoComplete="email"
-                label="Your email"
-                type="email"
-                name="email"
-                maxLength={MAX_EMAIL_LENGTH}
-                {...email}
-              />
-              <Input
-                required
-                multiline
-                className={styles.input}
-                data-status={status}
-                style={getDelay(tokens.base.durationS, initDelay)}
-                autoComplete="off"
-                label="Message"
-                name="message"
-                maxLength={MAX_MESSAGE_LENGTH}
-                {...message}
-              />
-              <Button
-                className={styles.button}
-                data-status={status}
-                data-sending={sending}
-                style={getDelay(tokens.base.durationM, initDelay)}
-                disabled={true}
-                icon="send"
-                type="button"
-              >
-                Send message
-              </Button>
-            </form>
+            {sent ? (
+              <div className={styles.complete}>
+                <Heading level={3} as="h3" className={styles.completeTitle} data-status="entered">
+                  Message sent
+                </Heading>
+                <Text size="l" className={styles.completeText} data-status="entered">
+                  Thanks for reaching out. I&apos;ll get back to you soon.
+                </Text>
+              </div>
+            ) : (
+              <fetcher.Form method="post" className={styles.form}>
+                {/* Hidden honeypot field to identify bots */}
+                <Input
+                  className={styles.botkiller}
+                  label="Name"
+                  name="name"
+                  maxLength={MAX_EMAIL_LENGTH}
+                />
+                <Input
+                  required
+                  className={styles.input}
+                  data-status={status}
+                  style={getDelay(tokens.base.durationXS, initDelay)}
+                  autoComplete="email"
+                  label="Your email"
+                  type="email"
+                  name="email"
+                  maxLength={MAX_EMAIL_LENGTH}
+                  {...email}
+                />
+                <Input
+                  required
+                  multiline
+                  className={styles.input}
+                  data-status={status}
+                  style={getDelay(tokens.base.durationS, initDelay)}
+                  autoComplete="off"
+                  label="Message"
+                  name="message"
+                  maxLength={MAX_MESSAGE_LENGTH}
+                  {...message}
+                />
+                {sendError && (
+                  <div className={styles.formError} ref={errorRef}>
+                    <div className={styles.formErrorContent}>
+                      <div className={styles.formErrorMessage}>
+                        <Icon className={styles.formErrorIcon} icon="error" />
+                        <Text size="s">{sendError}</Text>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <Button
+                  className={styles.button}
+                  data-status={status}
+                  data-sending={sending}
+                  style={getDelay(tokens.base.durationM, initDelay)}
+                  disabled={sending}
+                  icon="send"
+                  type="submit"
+                >
+                  {sending ? 'Sending…' : 'Send message'}
+                </Button>
+              </fetcher.Form>
+            )}
           </div>
         )}
       </Transition>
