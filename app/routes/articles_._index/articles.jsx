@@ -2,9 +2,12 @@ import { DecoderText } from '~/components/decoder-text';
 import { Divider } from '~/components/divider';
 import { Footer } from '~/components/footer';
 import { Heading } from '~/components/heading';
+import { Image } from '~/components/image';
 import { Section } from '~/components/section';
 import { Text } from '~/components/text';
+import { useReducedMotion } from 'framer-motion';
 import { useWindowSize } from '~/hooks';
+import { useState } from 'react';
 import { cssProps } from '~/utils/style';
 import styles from './articles.module.css';
 
@@ -71,11 +74,29 @@ function ExperiencePost({ dates, title, company, location, description, isBreak,
 }
 
 function FeaturedCert() {
+  const [hovered, setHovered] = useState(false);
+  const reduceMotion = useReducedMotion();
+
   return (
-    <article className={styles.post} data-featured="true">
+    <article
+      className={styles.post}
+      data-featured="true"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       <Text className={styles.postLabel} size="s">
         Certification
       </Text>
+      <div className={styles.postImage}>
+        <Image
+          noPauseButton
+          play={!reduceMotion ? hovered : undefined}
+          src="/static/modern-styling-in-react-banner.jpg"
+          placeholder="/static/modern-styling-in-react-banner-placeholder.jpg"
+          alt=""
+          role="presentation"
+        />
+      </div>
       <div className={styles.postLink}>
         <div className={styles.postDetails}>
           <div aria-hidden className={styles.postDate}>
