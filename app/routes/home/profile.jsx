@@ -21,18 +21,32 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I’m Khushboo. I started out in agency work in Mumbai, managing digital
-campaigns for major brands like TATA Group Croma Retail, Piramal Pharmaceuticals, Home
-Centre India, and Bollywood film releases. That's where I learned how to keep complex work
-moving without losing the people involved in it. Then I moved to Vancouver to pursue an
-MBA and spent two years doing content design and delivery coordination at HealthLink BC
-inside the BC government right after graduation. I care about clarity over complexity. That's
-the thread through all of it..
+      I’m Khushboo, a UX strategist and digital project manager based in Vancouver, working
+      across public sector platforms and large-scale digital experiences.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I’m currently completing my PMP certification and looking for my next role in
-tech. Open to digital PM and UX content positions in Vancouver. Always up for a
-conversation about interesting work.
+      I started in agency environments in Mumbai, working with brands like Home Centre India,
+      Godrej Appliances, TATA Croma, Piramal Pharmaceuticals, and film releases under FOX
+      Studios (Disney+). The work was fast, high-volume, and constantly shifting. It taught me
+      how to manage complexity, align teams, and keep execution moving without losing clarity.
+    </Text>
+    <Text className={styles.description} data-visible={visible} size="l" as="p">
+      In Vancouver, my focus shifted from campaigns to public digital infrastructure at
+      HealthLink BC within the BC Government. Here, the stakes changed. I worked on a platform
+      used by millions of people making real health decisions. The work required more than
+      content. It demanded structure, governance, and precision across teams.
+    </Text>
+    <Text className={styles.description} data-visible={visible} size="l" as="p">
+      Across both environments, my role has stayed consistent. I bring clarity to complex
+      systems, translate intent into execution, and ensure the experience holds together from
+      idea to delivery. My work spans UX content design, digital project management,
+      accessibility-driven platforms, and cross-functional delivery across healthcare,
+      e-commerce, and media.
+    </Text>
+    <Text className={styles.description} data-visible={visible} size="l" as="p">
+      I’m a certified PMP and looking for my next role in digital project management, UX
+      strategy, or digital experience design in Vancouver. Open to a conversation about
+      interesting work.
     </Text>
   </Fragment>
 );
@@ -76,7 +90,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   collapseDelay={1000}
                 />
                 <div className={styles.tagText} data-visible={visible}>
-                  About me
+                  About Section
                 </div>
               </div>
               <div className={styles.image}>
