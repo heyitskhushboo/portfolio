@@ -11,5 +11,9 @@
     a:hover & {
       color: var(--primary);
     }
+
+    @media (--mediaMobile) {
+      font-size: 2rem;
+    }
   }
 }
