@@ -21,7 +21,7 @@
     }
 
     @media (--mediaMobile), (--mediaMobileLS) {
-      padding-left: calc(var(--spaceOuter) + var(--space2XL));
+      padding-left: var(--spaceOuter);
       padding-right: var(--spaceOuter);
     }
 

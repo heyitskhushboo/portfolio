@@ -17,6 +17,7 @@ export const Navbar = () => {
   const [current, setCurrent] = useState();
   const [menuOpen, setMenuOpen] = useState(false);
   const [target, setTarget] = useState();
+  const [scrollHidden, setScrollHidden] = useState(false);
   const { theme } = useTheme();
   const location = useLocation();
   const windowSize = useWindowSize();
@@ -112,6 +113,22 @@ export const Navbar = () => {
     };
   }, [theme, windowSize, location.key]);
 
+  // Hide K logo on mobile when scrolled away from top
+  useEffect(() => {
+    if (!isMobile) {
+      setScrollHidden(false);
+      return;
+    }
+
+    const handleScroll = () => {
+      setScrollHidden(window.scrollY > 80);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isMobile]);
+
   // Check if a nav item should be active
   const getCurrent = (url = '') => {
     const nonTrailing = current?.endsWith('/') ? current?.slice(0, -1) : current;
@@ -140,7 +157,7 @@ export const Navbar = () => {
   };
 
   return (
-    <header className={styles.navbar} ref={headerRef}>
+    <header className={styles.navbar} ref={headerRef} data-scroll-hidden={isMobile && scrollHidden ? 'true' : undefined}>
       <RouterLink
         unstable_viewTransition
         prefetch="intent"

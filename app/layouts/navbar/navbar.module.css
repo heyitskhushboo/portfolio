@@ -21,6 +21,11 @@
 
     @media (--mediaMobile), (--mediaMobileLS) {
       bottom: auto;
+      transition: transform var(--durationM) var(--bezierFastoutSlowin);
+
+      &[data-scroll-hidden='true'] {
+        transform: translateY(-200%);
+      }
     }
   }
 
