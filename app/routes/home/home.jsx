@@ -3,6 +3,7 @@ import goCheeseCampaign from '~/assets/goCheesecampaign.png';
 
 import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
 import lootCase from '~/assets/Lootcase.jpg';
+import cromaImage from `~/assets/cromaImage.jpeg`;
 import healthLinkBCPlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
@@ -175,8 +176,8 @@ export const Home = () => {
           alt: 'Annotating a biomedical image in the Slice app',
           textures: [
             {
-              srcSet: `${lootCase} 1280w, ${lootCase} 2560w`,
-              placeholder: lootCase,
+              srcSet: `${cromaImage} 1280w, ${cromaImage} 2560w`,
+              placeholder: cromaImage,
             },
           ],
         }}
