@@ -73,6 +73,10 @@
 
 .title {
   letter-spacing: -0.03em;
+
+  @media (--mediaMobile) {
+    font-size: clamp(1.5rem, 8.5vw, var(--fontSizeH0));
+  }
 }
 
 .row {
