@@ -52,7 +52,7 @@ export function Articles() {
         {/* Page title */}
         <header className={styles.header}>
           <Heading level={5} as="h1" className={styles.heading}>
-            <DecoderText text="Experience" />
+            <DecoderText text="Experience & Education" />
           </Heading>
         </header>
 
