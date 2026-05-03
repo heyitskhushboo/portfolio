@@ -20,6 +20,7 @@ import {
   ProjectContainer,
   ProjectHeader,
   ProjectImage,
+  ProjectNav,
   ProjectSection,
   ProjectSectionColumns,
   ProjectSectionContent,
@@ -329,6 +330,9 @@ export const HealthLink = () => {
         </ProjectSection>
 
       </ProjectContainer>
+      <ProjectNav
+        next={{ title: 'GO Cheese AI-based Interactive Website', href: '/projects/gocheese' }}
+      />
       <Footer />
     </Fragment>
   );

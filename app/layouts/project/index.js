@@ -10,3 +10,5 @@ export {
   ProjectSectionColumns,
   ProjectSection,
 } from './project';
+
+export { ProjectNav } from './project-nav';

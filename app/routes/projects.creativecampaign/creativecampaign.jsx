@@ -17,6 +17,7 @@ import {
   ProjectContainer,
   ProjectHeader,
   ProjectImage,
+  ProjectNav,
   ProjectSection,
   ProjectSectionColumns,
   ProjectSectionContent,
@@ -326,6 +327,9 @@ export const CreativeCampaign = () => {
         </ProjectSection>
 
       </ProjectContainer>
+      <ProjectNav
+        previous={{ title: 'GO Cheese Lovers Day Campaign', href: '/projects/gocheeseloversday' }}
+      />
       <Footer />
     </Fragment>
   );

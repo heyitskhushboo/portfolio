@@ -19,6 +19,7 @@ import {
   ProjectContainer,
   ProjectHeader,
   ProjectImage,
+  ProjectNav,
   ProjectSection,
   ProjectSectionColumns,
   ProjectSectionContent,
@@ -310,6 +311,10 @@ export const gocheeseloversday = () => {
         </ProjectSection>
 
       </ProjectContainer>
+      <ProjectNav
+        previous={{ title: 'GO Cheese AI-based Interactive Website', href: '/projects/gocheese' }}
+        next={{ title: 'High-Scale Creative Campaigns', href: '/projects/creativecampaign' }}
+      />
       <Footer />
     </Fragment>
   );

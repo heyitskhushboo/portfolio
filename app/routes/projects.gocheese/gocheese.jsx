@@ -20,6 +20,7 @@ import {
   ProjectContainer,
   ProjectHeader,
   ProjectImage,
+  ProjectNav,
   ProjectSection,
   ProjectSectionColumns,
   ProjectSectionContent,
@@ -340,6 +341,10 @@ export const GoCheese = () => {
         </ProjectSection>
 
       </ProjectContainer>
+      <ProjectNav
+        previous={{ title: 'HealthLink BC', href: '/projects/healthlink' }}
+        next={{ title: 'GO Cheese Lovers Day Campaign', href: '/projects/gocheeseloversday' }}
+      />
       <Footer />
     </Fragment>
   );
