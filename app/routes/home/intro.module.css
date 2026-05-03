@@ -112,6 +112,7 @@
   position: relative;
   display: flex;
   flex-shrink: 0;
+  max-width: 100%;
   align-items: center;
   line-height: 1;
   animation-duration: 1.5s;
