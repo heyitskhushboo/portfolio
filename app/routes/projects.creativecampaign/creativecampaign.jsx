@@ -100,7 +100,7 @@ export const CreativeCampaign = () => {
                 srcSet={`${mobileimage} 350w, ${mobileimage} 700w`}
                 width={350}
                 height={750}
-                placeholder={sliceSidebarLayersPlaceholder}
+                placeholder={mobileimage}
                 alt="Film campaign creative on mobile."
                 sizes={`(max-width: ${media.mobile}px) 200px, 343px`}
               />
@@ -109,7 +109,7 @@ export const CreativeCampaign = () => {
                 srcSet={`${mobileimage} 350w, ${mobileimage} 700w`}
                 width={350}
                 height={750}
-                placeholder={sliceSidebarAnnotationsPlaceholder}
+                placeholder={mobileimage}
                 alt="Film campaign assets on mobile."
                 sizes={`(max-width: ${media.mobile}px) 200px, 343px`}
               />
@@ -172,7 +172,7 @@ export const CreativeCampaign = () => {
               src={image4}
               width={940}
               height={500}
-              placeholder={image5}
+              placeholder={image4}
               alt="Campaign execution across OTT and digital platforms."
             />
           </ProjectSectionContent>

@@ -38,7 +38,7 @@ export const links = () => {
 
 export const meta = () => {
   return baseMeta({
-    title: 'Product Manager',
+    title: 'Project Manager',
     description: `Design portfolio of ${config.name} — a product designer working on web & mobile apps with a focus on motion, experience design, and accessibility.`,
   });
 };
@@ -134,7 +134,7 @@ export const Home = () => {
           textures: [
             {
               srcSet: `${goCheeseLaptopImage} 1280w, ${goCheeseLaptopImage} 2560w`,
-              placeholder: healthLinkBCPlaceholder,
+              placeholder: goCheeseLaptopImage,
             },
           ],
         }}
@@ -155,7 +155,7 @@ export const Home = () => {
           textures: [
             {
               srcSet: `${goCheeseCampaignLaptopImage} 1280w, ${goCheeseCampaignLaptopImage} 2560w`,
-              placeholder: sliceTexturePlaceholder,
+              placeholder: goCheeseCampaignLaptopImage,
             },
           ],
         }}
@@ -176,7 +176,7 @@ export const Home = () => {
           textures: [
             {
               srcSet: `${lootCase} 1280w, ${lootCase} 2560w`,
-              placeholder: sliceTexturePlaceholder,
+              placeholder: lootCase,
             },
           ],
         }}

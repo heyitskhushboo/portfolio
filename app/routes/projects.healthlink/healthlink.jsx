@@ -72,7 +72,7 @@ export const HealthLink = () => {
               srcSet={`${image1} 800w, ${image1} 1920w`}
               width={800}
               height={500}
-              placeholder={sliceAppPlaceholder}
+              placeholder={image1}
               alt="HealthLink BC website homepage showing health topic search and navigation."
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 90vw, 80vw`}
             />
@@ -96,7 +96,7 @@ export const HealthLink = () => {
                 srcSet={`${mobileimage1} 350w, ${mobileimage1} 700w`}
                 width={350}
                 height={750}
-                placeholder={sliceSidebarLayersPlaceholder}
+                placeholder={mobileimage1}
                 alt="HealthLink BC mobile interface showing health topics."
                 sizes={`(max-width: ${media.mobile}px) 200px, 343px`}
               />
@@ -105,7 +105,7 @@ export const HealthLink = () => {
                 srcSet={`${mobileimage2} 350w, ${mobileimage2} 700w`}
                 width={350}
                 height={750}
-                placeholder={sliceSidebarAnnotationsPlaceholder}
+                placeholder={mobileimage2}
                 alt="HealthLink BC mobile interface showing Find Care section."
                 sizes={`(max-width: ${media.mobile}px) 200px, 343px`}
               />
@@ -135,7 +135,7 @@ export const HealthLink = () => {
               srcSet={`${image2} 800w, ${image2} 1920w`}
               width={800}
               height={500}
-              placeholder={sliceSlidesPlaceholder}
+              placeholder={image2}
               alt="HealthLink BC internal navigation structure before redesign."
               sizes={`(max-width: ${media.mobile}px) 500px, (max-width: ${media.tablet}px) 800px, 1000px`}
             />
@@ -207,7 +207,7 @@ export const HealthLink = () => {
               src={image3}
               width={940}
               height={500}
-              placeholder={sliceIrlPlaceholder}
+              placeholder={image3}
               alt="HealthLink BC content migration workflow in Drupal CMS."
             />
           </ProjectSectionContent>
@@ -244,7 +244,7 @@ export const HealthLink = () => {
               src={image4}
               width={940}
               height={500}
-              placeholder={sliceIrlPlaceholder}
+              placeholder={image4}
               alt="HealthLink BC redesigned homepage with improved navigation and Find Care section."
             />
           </ProjectSectionContent>
