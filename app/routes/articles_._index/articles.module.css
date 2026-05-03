@@ -1,5 +1,3 @@
-@custom-media --singleColumnWidth (max-width: 1100px);
-
 /* ─── Page shell ─────────────────────────────────────── */
 
 .articles {
@@ -15,17 +13,14 @@
 /* ─── Page header ────────────────────────────────────── */
 
 .pageHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding-top: var(--spaceXL);
   padding-bottom: var(--space2XL);
   border-bottom: 1px solid color-mix(in lab, var(--text) 10%, transparent);
-  margin-bottom: var(--space4XL);
+  margin-bottom: var(--space3XL);
 
   @media (--mediaMobile) {
-    margin-bottom: var(--space2XL);
     padding-top: var(--mobileNavOffset);
+    margin-bottom: var(--space2XL);
   }
 }
 
@@ -34,137 +29,121 @@
   overflow: hidden;
 }
 
-.barcode {
-  opacity: 0;
-  flex-shrink: 0;
+/* ─── Bento grid ─────────────────────────────────────── */
 
-  &:global {
-    animation: fade-in 0.8s var(--bezierFastoutSlowin) forwards 0.4s;
-  }
-}
-
-/* ─── Two-column layout ──────────────────────────────── */
-
-.layout {
+.bento {
   display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: var(--space5XL);
-  align-items: start;
+  grid-template-columns: 1fr 1fr 360px;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "work1 work2 cert"
+    "edu1  edu2  cert";
+  gap: var(--spaceL);
+  align-items: stretch;
   padding-bottom: var(--space5XL);
 
-  @media (--mediaLaptop) {
-    gap: var(--space4XL);
-  }
+  /* Assign grid areas to nth-children */
+  & > :nth-child(1) { grid-area: work1; }
+  & > :nth-child(2) { grid-area: work2; }
+  & > :nth-child(3) { grid-area: cert;  }
+  & > :nth-child(4) { grid-area: edu1;  }
+  & > :nth-child(5) { grid-area: edu2;  }
 
-  @media (--singleColumnWidth) {
-    grid-template-columns: 1fr;
-    gap: var(--space4XL);
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "work1 work2"
+      "cert  cert"
+      "edu1  edu2";
   }
 
   @media (--mediaMobile) {
-    gap: var(--space3XL);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "work1"
+      "work2"
+      "cert"
+      "edu1"
+      "edu2";
+    gap: var(--spaceM);
     padding-bottom: var(--space3XL);
   }
 }
 
-/* ─── Column labels ──────────────────────────────────── */
-
-.colLabel {
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--textLight);
-  font-weight: var(--fontWeightMedium);
-  margin-bottom: var(--space2XL);
-}
-
 /* ═══════════════════════════════════════════════════════
-   WORK EXPERIENCE — timeline
+   WORK EXPERIENCE CARDS
    ═══════════════════════════════════════════════════════ */
 
-.workCol {
-  min-width: 0;
-}
-
-.timeline {
+.workCard {
   position: relative;
-  display: flex;
-  flex-direction: column;
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: 7px;
-    top: 14px;
-    bottom: 0;
-    width: 1px;
-    background: linear-gradient(
-      to bottom,
-      var(--accent),
-      color-mix(in lab, var(--accent) 0%, transparent) 90%
-    );
-  }
-}
-
-.entry {
-  display: flex;
-  gap: var(--space2XL);
-  padding-bottom: var(--space3XL);
+  border: 1px solid color-mix(in lab, var(--text) 10%, transparent);
+  overflow: hidden;
   opacity: 0;
+  transition: border-color var(--durationM) ease;
 
   &:global {
     animation: fade-in var(--durationL) ease var(--delay) forwards;
   }
 
-  &:last-child {
-    padding-bottom: 0;
+  /* Big background number */
+  &::before {
+    content: attr(data-number);
+    position: absolute;
+    top: -12px;
+    right: 12px;
+    font-size: 100px;
+    font-weight: var(--fontWeightBold);
+    line-height: 1;
+    color: color-mix(in lab, var(--accent) 7%, transparent);
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -0.06em;
+    transition: color var(--durationM) ease;
+  }
+
+  @media (--mediaUseMotion) {
+    &:hover {
+      border-color: color-mix(in lab, var(--accent) 30%, transparent);
+
+      &::before {
+        color: color-mix(in lab, var(--accent) 14%, transparent);
+      }
+    }
+  }
+}
+
+.workCardInner {
+  padding: var(--space3XL);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spaceM);
+  height: 100%;
+  position: relative;
+  z-index: 1;
+
+  @media (--mediaLaptop) {
+    padding: var(--space2XL);
   }
 
   @media (--mediaMobile) {
-    gap: var(--spaceL);
-    padding-bottom: var(--space2XL);
+    padding: var(--spaceXL);
   }
 }
 
-.entryTimeline {
-  flex-shrink: 0;
-  width: 15px;
-  padding-top: 10px;
-}
-
-.timelineDot {
-  display: block;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: var(--background);
-  border: 2px solid var(--accent);
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 0 14px color-mix(in lab, var(--accent) 50%, transparent);
-}
-
-.entryBody {
-  display: grid;
-  gap: var(--spaceM);
-  min-width: 0;
-}
-
-.entryDates {
+.workDates {
   font-size: var(--fontSizeBodyXS);
   color: var(--accent);
-  letter-spacing: 0.08em;
   font-weight: var(--fontWeightMedium);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-.entryTitle {
+.workTitle {
   line-height: 1.3;
   color: var(--textTitle);
-  margin: 0;
 }
 
-.entryCompany {
+.workCompany {
   display: flex;
   align-items: center;
   gap: var(--spaceS);
@@ -187,68 +166,136 @@
   font-size: var(--fontSizeBodyS);
 }
 
-.entryDescription {
+.workDescription {
   color: var(--textBody);
   line-height: 1.75;
-  max-width: 520px;
+  flex: 1;
 }
 
-.entryLocation {
+.workLocation {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   color: var(--textLight);
   font-size: var(--fontSizeBodyXS);
   letter-spacing: 0.04em;
+  margin-top: var(--spaceS);
 }
 
 /* ═══════════════════════════════════════════════════════
-   RIGHT SIDE COLUMN
+   CERTIFICATION CARD — full height right column
    ═══════════════════════════════════════════════════════ */
 
-.sideCol {
+.certArea {
   display: flex;
   flex-direction: column;
-  gap: var(--space3XL);
+}
 
-  @media (--singleColumnWidth) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space3XL);
-    align-items: start;
+.certCard {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 400px;
+
+  @media (max-width: 1000px) {
+    min-height: 340px;
   }
 
   @media (--mediaMobile) {
-    grid-template-columns: 1fr;
-    gap: var(--space2XL);
+    min-height: 300px;
   }
 }
 
-/* ─── Education ──────────────────────────────────────── */
-
-.eduSection {
-  display: flex;
-  flex-direction: column;
+.certBg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 15%, oklch(52% 0.2 295 / 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 85%, oklch(46% 0.22 320 / 0.4) 0%, transparent 50%),
+    linear-gradient(150deg, oklch(23% 0.08 290) 0%, oklch(13% 0.04 280) 100%);
 }
 
-.eduList {
+.certContent {
+  position: relative;
+  z-index: 1;
+  padding: var(--space3XL);
   display: flex;
   flex-direction: column;
+  gap: var(--spaceL);
+  opacity: 0;
+
+  &:global {
+    animation: fade-in 1s var(--bezierFastoutSlowin) forwards 0.3s;
+  }
+
+  @media (--mediaLaptop) {
+    padding: var(--space2XL);
+  }
+
+  @media (--mediaMobile) {
+    padding: var(--spaceXL);
+    gap: var(--spaceM);
+  }
+}
+
+.certHeader {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
   gap: var(--spaceM);
 }
 
+.certLabel {
+  color: color-mix(in lab, var(--white) 60%, transparent);
+  letter-spacing: 0.04em;
+}
+
+.certTitle {
+  color: var(--white);
+  line-height: 1.15;
+}
+
+.certBody {
+  color: color-mix(in lab, var(--white) 62%, transparent);
+  line-height: 1.7;
+}
+
+.certIssuer {
+  color: color-mix(in lab, var(--white) 40%, transparent);
+  font-size: var(--fontSizeBodyXS);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: var(--spaceM);
+
+  &::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: color-mix(in lab, var(--white) 22%, transparent);
+    flex-shrink: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   EDUCATION CARDS
+   ═══════════════════════════════════════════════════════ */
+
 .eduCard {
-  display: grid;
-  grid-template-columns: 48px 1fr;
-  gap: var(--spaceL);
-  padding: var(--spaceXL);
-  position: relative;
+  padding: var(--space2XL);
   border: 1px solid color-mix(in lab, var(--text) 10%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spaceS);
+  position: relative;
   overflow: hidden;
   opacity: 0;
-  transition:
-    border-color var(--durationM) ease,
-    transform var(--durationM) var(--bezierFastoutSlowin);
+  transition: border-color var(--durationM) ease;
 
   &:global {
     animation: fade-in var(--durationL) ease var(--delay) forwards;
@@ -260,8 +307,8 @@
     inset: 0;
     background: linear-gradient(
       135deg,
-      color-mix(in lab, var(--accent) 7%, transparent) 0%,
-      transparent 55%
+      color-mix(in lab, var(--accent) 6%, transparent) 0%,
+      transparent 60%
     );
     pointer-events: none;
     opacity: 0;
@@ -270,42 +317,37 @@
 
   @media (--mediaUseMotion) {
     &:hover {
-      border-color: color-mix(in lab, var(--accent) 35%, transparent);
-      transform: translateY(-2px);
+      border-color: color-mix(in lab, var(--accent) 30%, transparent);
 
       &::before {
         opacity: 1;
       }
     }
   }
+
+  @media (--mediaMobile) {
+    padding: var(--spaceXL);
+  }
 }
 
 .eduAbbr {
-  width: 48px;
-  height: 48px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in lab, var(--accent) 12%, transparent);
-  border: 1px solid color-mix(in lab, var(--accent) 25%, transparent);
+  width: 44px;
+  height: 44px;
+  border: 1px solid color-mix(in lab, var(--accent) 28%, transparent);
+  background: color-mix(in lab, var(--accent) 10%, transparent);
   color: var(--accent);
   font-size: var(--fontSizeBodyXS);
   font-weight: var(--fontWeightBold);
   letter-spacing: 0.08em;
-  flex-shrink: 0;
-}
-
-.eduBody {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spaceXS);
-  min-width: 0;
+  margin-bottom: var(--spaceS);
 }
 
 .eduInstitution {
   color: var(--primary);
   font-weight: var(--fontWeightMedium);
-  letter-spacing: 0.01em;
 }
 
 .eduDegree {
@@ -317,8 +359,8 @@
   display: flex;
   align-items: center;
   gap: var(--spaceM);
-  margin-top: var(--spaceXS);
   flex-wrap: wrap;
+  margin-top: var(--spaceXS);
 }
 
 .eduDates {
@@ -327,111 +369,11 @@
 }
 
 .eduGrade {
-  color: var(--accent);
   font-size: var(--fontSizeBodyXS);
   font-weight: var(--fontWeightMedium);
-  padding: 1px 8px;
-  border: 1px solid color-mix(in lab, var(--accent) 30%, transparent);
+  color: var(--accent);
+  padding: 2px 8px;
+  border: 1px solid color-mix(in lab, var(--accent) 28%, transparent);
   background: color-mix(in lab, var(--accent) 8%, transparent);
   letter-spacing: 0.04em;
-}
-
-/* ─── Certification card ─────────────────────────────── */
-
-.certSection {
-  position: sticky;
-  top: var(--space3XL);
-
-  @media (--singleColumnWidth) {
-    position: relative;
-    top: 0;
-  }
-}
-
-.certCard {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%);
-  min-height: 360px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-
-  @media (--mediaMobile) {
-    min-height: 300px;
-  }
-}
-
-.certBg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 75% 15%, oklch(50% 0.18 295 / 0.5) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 85%, oklch(45% 0.2 320 / 0.35) 0%, transparent 50%),
-    linear-gradient(145deg, oklch(22% 0.1 290) 0%, oklch(14% 0.05 280) 100%);
-}
-
-.certInner {
-  position: relative;
-  z-index: 1;
-  padding: var(--space3XL);
-  display: grid;
-  gap: var(--spaceL);
-  opacity: 0;
-
-  &:global {
-    animation: fade-in 1s var(--bezierFastoutSlowin) forwards 0.25s;
-  }
-
-  @media (--mediaMobile) {
-    padding: var(--space2XL);
-    gap: var(--spaceM);
-  }
-}
-
-.certLabel {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: var(--spaceM);
-  color: color-mix(in lab, var(--white) 65%, transparent);
-}
-
-.certTitle {
-  color: var(--white);
-  line-height: 1.15;
-}
-
-.certDescription {
-  color: color-mix(in lab, var(--white) 65%, transparent);
-  line-height: 1.65;
-}
-
-.certIssuer {
-  color: color-mix(in lab, var(--white) 45%, transparent);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: var(--spaceM);
-
-  &::before {
-    content: '';
-    width: 28px;
-    height: 1px;
-    background: color-mix(in lab, var(--white) 25%, transparent);
-    flex-shrink: 0;
-  }
-}
-
-.certTag {
-  position: absolute;
-  top: 30%;
-  right: 0;
-  color: color-mix(in lab, var(--white) 20%, transparent);
-  transform: translateX(50%) rotate(-90deg);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  z-index: 1;
-  white-space: nowrap;
 }
